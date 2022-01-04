@@ -1,6 +1,8 @@
 ![](https://komarev.com/ghpvc/?username=asifulmamun&label=PROFILE+VISITED++&style=plastic&color=blue)
 ![](https://hit.yhype.me/github/profile?user_id=24929452)
 
+![GitHub streak stats](https://github-readme-streak-stats.herokuapp.com/?user=asifulmamun)
+
 <!--
 ### Hi there 👋
 Here are some ideas to get you started:
@@ -39,8 +41,6 @@ Here are some ideas to get you started:
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs?username=asifulmamun&count_private=true&show_icons=true)](https://github.com/anuraghazra/github-readme-stats)
 
 ![GitHub Activity Graph](https://activity-graph.herokuapp.com/graph?username=asifulmamun)
-
-![GitHub streak stats](https://github-readme-streak-stats.herokuapp.com/?user=asifulmamun)
 
 <!--
 [![willianrod's wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=asifulmamun)](https://github.com/anuraghazra/github-readme-stats)
