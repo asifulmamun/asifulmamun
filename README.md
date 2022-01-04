@@ -20,7 +20,7 @@
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs?username=asifulmamun&count_private=true&show_icons=true)](https://github.com/anuraghazra/github-readme-stats)
 
 <br />
-![GitHub streak stats](https://github-readme-streak-stats.herokuapp.com/?user=asifulmamun)
+[![GitHub streak stats](https://github-readme-streak-stats.herokuapp.com/?user=asifulmamun)
 
 <br />
 <img align="left" alt="Al Mamun Github Stats" src="https://github-readme-stats.vercel.app/api?username=asifulmamun&show_icons=true" />
