@@ -1,10 +1,10 @@
 ![](https://komarev.com/ghpvc/?username=asifulmamun&label=PROFILE+VISITED++&style=plastic&color=blue)
 ![](https://hit.yhype.me/github/profile?user_id=24929452)
+[![Twitter Follow](https://img.shields.io/twitter/follow/asifulmamun?color=1DA1F2&label=Followers&logo=twitter&style=for-the-badge)][twitter]
+[![GitHub followers](https://img.shields.io/github/followers/asifulmamun?logo=GitHub&style=for-the-badge)][github]
 
 [<img align="left" alt="Al Mamun - asifulmamun | Facebook" width="28px" src="https://firebasestorage.googleapis.com/v0/b/web-johannesmilke.appspot.com/o/other%2Fsocial%2Ffacebook.png?alt=media" />][facebook]
 [<img align="left" alt="Al Mamun | Website" width="28px" src="https://firebasestorage.googleapis.com/v0/b/web-johannesmilke.appspot.com/o/other%2Fsocial%2Fwebsite.png?alt=media" />][website]
-[![Twitter Follow](https://img.shields.io/twitter/follow/asifulmamun?color=1DA1F2&label=Followers&logo=twitter&style=for-the-badge)][twitter]
-[![GitHub followers](https://img.shields.io/github/followers/asifulmamun?logo=GitHub&style=for-the-badge)][github]
 
 ### Languages and Tools:
 <img align="left" alt="Python" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png" />
