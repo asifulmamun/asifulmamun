@@ -18,8 +18,6 @@
 
 ![GitHub streak stats](https://github-readme-streak-stats.herokuapp.com/?user=asifulmamun)
 
-![GitHub Activity Graph](https://activity-graph.herokuapp.com/graph?username=asifulmamun)
-
 [website]: https://asifulmamun.info
 [twitter]: https://twitter.com/asifulmamun
 [youtube]: https://www.youtube.com/channel/UC3Ll1aoKrLP74hflMDfWWZg
@@ -27,6 +25,8 @@
 [facebook]: https://facebook.com/asifulmamun.info
 
 <!--
+![GitHub Activity Graph](https://activity-graph.herokuapp.com/graph?username=asifulmamun)
+
 ### Hi there 👋
 Here are some ideas to get you started:
 - 🔭 I’m currently working on ...
