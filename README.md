@@ -25,6 +25,7 @@ Here are some ideas to get you started:
 <img align="left" alt="CSS3" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" />
 <br/>
 
+
 <!--
 <img align="left" alt="Android Studio" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/android/android.png" />
 <img align="left" alt=“Flutter” width="26px" src="https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg" />
@@ -34,14 +35,16 @@ Here are some ideas to get you started:
 <img align="left" alt=“Dart” width="26px" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg" />
 -->
 
-<img align="left" alt="Al Mamun Github Stats" src="https://github-readme-stats.vercel.app/api?username=asifulmamun&show_icons=true" />    &nbsp;
+<img align="left" alt="Al Mamun Github Stats" src="https://github-readme-stats.vercel.app/api?username=asifulmamun&show_icons=true" />&nbsp;
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs?username=asifulmamun&count_private=true&show_icons=true)](https://github.com/anuraghazra/github-readme-stats)
 
 ![GitHub Activity Graph](https://activity-graph.herokuapp.com/graph?username=asifulmamun)
 
 ![GitHub streak stats](https://github-readme-streak-stats.herokuapp.com/?user=asifulmamun)
 
+<!--
 [![willianrod's wakatime stats](https://github-readme-stats.vercel.app/api/wakatime?username=asifulmamun)](https://github.com/anuraghazra/github-readme-stats)
+-->
 
 [website]: https://asifulmamun.info
 [twitter]: https://twitter.com/asifulmamun
