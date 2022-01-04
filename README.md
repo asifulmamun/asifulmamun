@@ -15,4 +15,9 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 
-[![](https://img.shields.io/github/followers/asifulmamun?logo=GitHub&style=for-the-badge)][github]
+[![Youtube](https://img.shields.io/static/v1?label=UC3Ll1aoKrLP74hflMDfWWZg&message=Subscribe&logo=YouTube&color=FF0000&style=for-the-badge)][youtube]
+[![Twitter Follow](https://img.shields.io/twitter/follow/asifulmamun?color=1DA1F2&label=Followers&logo=twitter&style=for-the-badge)][twitter]
+[![GitHub followers](https://img.shields.io/github/followers/asifulmamun?logo=GitHub&style=for-the-badge)][github]
+[![Linkedin: Md. Al-Amin](https://img.shields.io/badge/-CONNECT-blue?style=for-the-badge&logo=Linkedin&link=https://www.linkedin.com/in/asifulmamun/)][linkedin]
+
+![GitHub Activity Graph](https://activity-graph.herokuapp.com/graph?username=asifulmamun)
