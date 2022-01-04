@@ -6,14 +6,15 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/asifulmamun?color=1DA1F2&label=Followers&logo=twitter&style=for-the-badge)][twitter]
 [![GitHub followers](https://img.shields.io/github/followers/asifulmamun?logo=GitHub&style=for-the-badge)][github]
 
-![GitHub streak stats](https://github-readme-streak-stats.herokuapp.com/?user=asifulmamun)
-<img align="left" alt="Al Mamun Github Stats" src="https://github-readme-stats.vercel.app/api?username=asifulmamun&show_icons=true" />&nbsp;
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs?username=asifulmamun&count_private=true&show_icons=true)](https://github.com/anuraghazra/github-readme-stats)
-
 ### Languages and Tools:
 <img align="left" alt="Python" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png" />
 <img align="left" alt="HTML5" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" />
 <img align="left" alt="CSS3" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" />
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs?username=asifulmamun&count_private=true&show_icons=true)](https://github.com/anuraghazra/github-readme-stats)
+![GitHub streak stats](https://github-readme-streak-stats.herokuapp.com/?user=asifulmamun)
+<img align="left" alt="Al Mamun Github Stats" src="https://github-readme-stats.vercel.app/api?username=asifulmamun&show_icons=true" />&nbsp;
+
 
 ![GitHub Activity Graph](https://activity-graph.herokuapp.com/graph?username=asifulmamun)
 
