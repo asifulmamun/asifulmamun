@@ -37,7 +37,7 @@ Here are some ideas to get you started:
 <img align="left" alt=“Dart” width="26px" src="https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg" />
 -->
 
-<img align="left" alt="Al Mamun Github Stats" src="https://github-readme-stats.vercel.app/api?username=asifulmamun&show_icons=true" />&nbsp;
+<img align="left" alt="Al Mamun Github Stats" src="https://github-readme-stats.vercel.app/api?username=asifulmamun&show_icons=true" /><br/>
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs?username=asifulmamun&count_private=true&show_icons=true)](https://github.com/anuraghazra/github-readme-stats)
 
 ![GitHub Activity Graph](https://activity-graph.herokuapp.com/graph?username=asifulmamun)
