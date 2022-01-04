@@ -11,16 +11,16 @@
 <img align="left" alt="Python" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png" />
 <img align="left" alt="HTML5" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" />
 <img align="left" alt="CSS3" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" /><br /><br />
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs?username=asifulmamun&count_private=true&show_icons=true)](https://github.com/anuraghazra/github-readme-stats)]
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs?username=asifulmamun&count_private=true&show_icons=true)](https://github.com/anuraghazra/github-readme-stats)
 
 
-[![GitHub streak stats](https://github-readme-streak-stats.herokuapp.com/?user=asifulmamun)]
+[![GitHub streak stats](https://github-readme-streak-stats.herokuapp.com/?user=asifulmamun)
 
 
 <img align="left" alt="Al Mamun Github Stats" src="https://github-readme-stats.vercel.app/api?username=asifulmamun&show_icons=true" />
 
 
-[![GitHub Activity Graph](https://activity-graph.herokuapp.com/graph?username=asifulmamun)]
+[![GitHub Activity Graph](https://activity-graph.herokuapp.com/graph?username=asifulmamun)
 
 [website]: https://asifulmamun.info
 [twitter]: https://twitter.com/asifulmamun
