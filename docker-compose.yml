@@ -27,6 +27,23 @@ services:
             - meilisearch
             - mailpit
             - selenium
+
+# next added
+    nginx:
+        image: nginx:alpine
+        ports:
+            - '8000:80'
+        volumes:
+            - './nginx/default.conf:/etc/nginx/conf.d/default.conf'
+            - '.:/var/www/html'
+        depends_on:
+            - laravel.test
+        networks:
+            - sail
+# try next added
+            
+
+
     mysql:
         image: 'mysql/mysql-server:8.0'
         ports:
