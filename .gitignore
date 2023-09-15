@@ -17,3 +17,11 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
+
+
+
+# https://github.com/acadea/laravel-sail-nginx-php-fpm/blob/main/.gitignore
+*.crt
+*.csr
+*.key
