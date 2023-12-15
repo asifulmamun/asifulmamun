@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <meta http-equiv="refresh"
+        content="7; url='https://drive.google.com/file/d/1YLlzFCoYd8qSbD5IP9d9FrIsTmhLiA8P'" />
+    <title>Resume - Al Mamun - @ASIFULMAMUN</title>
+</head>
+
+<body>
+    <section class="h-screen w-full text-gray-400 bg-gray-900 flex flex-col justify-center body-font">
+        <h1 class="text-2xl text-center" id="timerSec"></h1>
+        <div class="container px-5 py-24 mx-auto">
+            <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
+                <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-white">
+                    You will be redirect to file
+                    within 7 sec
+                    <small
+                        class="text-xs">https://drive.google.com/file/d/1YLlzFCoYd8qSbD5IP9d9FrIsTmhLiA8P</small>
+                </h1>
+
+                <a target="_blank"
+                    href="https://drive.google.com/file/d/1YLlzFCoYd8qSbD5IP9d9FrIsTmhLiA8P"
+                    class="flex-shrink-0 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg mt-10 sm:mt-0">Click
+                    here</a>
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var seconds = Math.floor((distance % (1000 * 10)) / 1000);
+
+        // Output the result in an element with id="demo"
+        document.getElementById("timerSec").innerHTML = seconds + "s ";
+
+        // If the count down is over, write some text 
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("timerSec").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+</script>
+
+</html>
