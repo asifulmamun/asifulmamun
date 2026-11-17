@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@theme {
+	--color-base: #252836;
+	--color-accent: #3b82f6;
+	--font-serif: "Cormorant Garamond", serif;
+	--font-sans: "Poppins", sans-serif;
+}
