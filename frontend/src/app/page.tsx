@@ -3,10 +3,15 @@ import content from '@/src/data/home-en.json';
 import bannerBG from '@/src/assets/images/asifulmamun-al-mamun.jpg';
 import SocialIcon from '@/src/components/icons';
 
+import Header from '@/src/components/header';
+
 export default function Home() {
   return (
-    <main lang="en" className="relative min-h-screen overflow-hidden mx-auto max-w-6xl items-center bg-white font-sans text-slate-900">
-      <section className="relative min-h-screen">
+    <main lang="en" className="relative min-h-screen overflow-hidden bg-white font-sans text-slate-900">
+      <Header />
+
+
+      <section className="mx-auto max-w-6xl items-center relative min-h-screen">
         <div className="grid min-h-screen grid-cols-1 gap-8 px-6 py-16 lg:grid-cols-2">
           <div className="order-2 lg:order-1">
             <p className="font-serif text-4xl sm:text-5xl">{content.intro}</p>
