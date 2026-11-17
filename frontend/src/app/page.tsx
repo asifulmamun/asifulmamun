@@ -1,4 +1,5 @@
-import content from '../data/en.json';
+import content from '@/src/data/home-en.json';
+import bannerBG from '@/src/assets/images/asifulmamun-al-mamun.jpg';
 
 function SocialIcon({ name }: { name: string }) {
   if (name === 'facebook') {
@@ -69,7 +70,7 @@ export default function Home() {
               </svg>
 
               <div className="absolute inset-x-6 bottom-0 top-8 flex items-center justify-center rounded-t-[40%] border border-dashed border-slate-300 bg-slate-50 text-sm text-slate-500">
-                {content.imagePlaceholder}
+                <img src={bannerBG} alt="Asiful Mamun" className="h-full w-full object-cover" />
               </div>
 
               {content.socialLinks.map((social) => (

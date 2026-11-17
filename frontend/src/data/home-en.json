@@ -10,7 +10,6 @@
     "label": "Watch Video",
     "href": "#"
   },
-  "imagePlaceholder": "Your image here",
   "socialLinks": [
     { "label": "Facebook", "href": "#", "icon": "facebook", "x": "78%", "y": "18%" },
     { "label": "Dribbble", "href": "#", "icon": "dribbble", "x": "91%", "y": "38%" },
