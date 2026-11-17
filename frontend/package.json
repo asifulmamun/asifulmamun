@@ -9,7 +9,6 @@
     "start": "npx serve@latest out"
   },
   "dependencies": {
-    "@google/genai": "^2.4.0",
     "@tailwindcss/postcss": "^4.3.1",
     "lucide-react": "^0.546.0",
     "motion": "^12.23.24",
