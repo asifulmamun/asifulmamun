@@ -1,8 +1,8 @@
 # Frontend architecture
 
 > **Scope:** Detailed reference for route, SSG, localization, SEO, sitemap,
-> robots/llms.txt, theme, deployment, and page/locale additions. Skip this
-> document for unrelated, isolated UI edits.
+> robots/llms.txt, theme, deployment, shared layout/document structure, and
+> page/locale additions. Skip this document for unrelated, isolated UI edits.
 
 ## Overview
 
@@ -220,3 +220,14 @@ pnpm exec tsc --noEmit
 pnpm build
 pnpm start
 ```
+
+## Keeping architecture and agent guidance current
+
+When a change materially alters architecture, shared application behavior, or
+a workflow other agents rely on, update this document in the same change
+without waiting for the user to request it. Also update the relevant agent
+entry points (`../AGENTS.md`, `../CLAUDE.md`, and
+`../.github/copilot-instructions.md`) when their architecture summary or
+read-when instructions need to change. Keep updates focused on durable
+decisions and the current source of truth; routine isolated UI or copy changes
+do not need architecture-document changes.

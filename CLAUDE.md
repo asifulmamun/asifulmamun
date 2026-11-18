@@ -10,4 +10,10 @@ guidance. For Copilot, see
 For frontend work, read [`frontend/AGENTS.md`](frontend/AGENTS.md). Read
 [`frontend/ARCHITECTURE.md`](frontend/ARCHITECTURE.md) only for tasks involving
 routes, SSG, localization, page data, SEO, sitemap/robots/llms.txt, theme,
-deployment, or adding a page or locale.
+deployment, adding a page or locale, or changing shared layout/document
+structure, metadata, or common scripts.
+
+When a change materially changes architecture or shared application behavior,
+update the relevant architecture and agent guidance in the same change without
+waiting for the user to ask. Keep this documentation scoped to what changed;
+routine isolated UI edits do not need architecture-document updates.

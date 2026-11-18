@@ -10,8 +10,9 @@ Copilot's repository-wide entry point is
 
 Read [`ARCHITECTURE.md`](ARCHITECTURE.md) for tasks involving routes, SSG,
 localization, page data, SEO, sitemap/robots/llms.txt, theme, deployment, or
-adding a page or locale. For an isolated UI or copy change, inspect only the
-relevant source files.
+adding a page or locale. Also read it before changing the shared layout,
+document structure, metadata defaults, or common head/body/footer scripts. For
+an isolated UI or copy change, inspect only the relevant source files.
 
 ## Source-of-truth rules
 
@@ -34,6 +35,17 @@ relevant source files.
   sitemap.
 - This app must remain buildable with `output: 'export'`; avoid runtime-only
   server features unless the deployment architecture is deliberately changed.
+
+## Keeping agent documentation current
+
+- For a material architecture or shared-behavior change, update
+  [`ARCHITECTURE.md`](ARCHITECTURE.md) and any affected agent entry points in
+  the same change. Do this proactively; do not wait for the user to ask.
+- Update the relevant read-when guidance in root `AGENTS.md`, `CLAUDE.md`, or
+  `.github/copilot-instructions.md` if agents need to load a different
+  document to understand the changed system.
+- Keep docs focused on durable behavior and source-of-truth locations. A
+  routine isolated UI/copy change does not require an architecture update.
 
 ## Validation
 

@@ -15,9 +15,10 @@ For Copilot, the auto-loaded entry point is
 other coding agents:
 
 1. Read [`frontend/AGENTS.md`](frontend/AGENTS.md) for any frontend task.
-2. Read [`frontend/ARCHITECTURE.md`](frontend/ARCHITECTURE.md) only when work
+2. Read [`frontend/ARCHITECTURE.md`](frontend/ARCHITECTURE.md) when work
    involves routes, SSG, localization, SEO, sitemap, robots, llms.txt, theme,
-   deployment, or adding a page or locale.
+   deployment, adding a page or locale, or changing shared layout/document
+   structure, metadata, or common scripts.
 3. Use [`frontend/README.md`](frontend/README.md) for local setup.
 
 ## Repository map
@@ -34,7 +35,12 @@ other coding agents:
 
 - Keep changes in the requested project and preserve unrelated work.
 - Read the frontend architecture before changing routes, locale data, metadata,
-  or static-export behavior.
+  static-export behavior, or shared layout/document structure.
+- When a change materially changes architecture, shared application behavior,
+  or a workflow other agents rely on, update the relevant architecture and
+  agent guidance in the same change. Do this proactively; do not wait for the
+  user to request documentation. Keep documentation changes scoped to the
+  behavior that changed.
 - Do not commit credentials or copy values from local `.env` files. Use
   `frontend/env.example` as the environment-variable reference.
 - Do not commit and don't ask for commit git will manage by owner.
