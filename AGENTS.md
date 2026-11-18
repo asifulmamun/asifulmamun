@@ -34,5 +34,6 @@ Before changing the Next.js application, read:
   or static-export behavior.
 - Do not commit credentials or copy values from local `.env` files. Use
   `frontend/env.example` as the environment-variable reference.
+- Do not commit and don't ask for commit git will manage by owner.
 - Run frontend commands from `frontend/`. The build output in `frontend/out/`
   is generated; edit the source files instead.
