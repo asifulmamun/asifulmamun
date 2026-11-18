@@ -5,11 +5,11 @@ export const dynamic = 'force-static';
 const siteUrl = (process.env.NEXT_PUBLIC_BASE_URL || 'https://asifulmamun.info.bd').replace(/\/$/, '');
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: siteUrl,
+  const routes = ['', '/about', '/service', '/contact'];
+
+  return routes.map((route, index) => ({
+      url: `${siteUrl}${route}`,
       changeFrequency: 'monthly',
-      priority: 1,
-    },
-  ];
+      priority: index === 0 ? 1 : 0.7,
+    }));
 }
