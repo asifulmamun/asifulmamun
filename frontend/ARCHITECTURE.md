@@ -1,10 +1,13 @@
 # Frontend architecture
 
+> **Scope:** Detailed reference for route, SSG, localization, SEO, sitemap,
+> robots/llms.txt, theme, deployment, and page/locale additions. Skip this
+> document for unrelated, isolated UI edits.
+
 ## Overview
 
 The active site is the Next.js App Router application in `frontend/`. It uses
-React, TypeScript, Tailwind CSS 4, and JSON files for page content. The separate
-`frontend-v1.0.0/` directory is an older static implementation.
+React, TypeScript, Tailwind CSS 4, and JSON files for page content.
 
 The app is built as a static site: `next.config.ts` sets `output: 'export'`,
 and `pnpm build` writes deployable files to `frontend/out/`. The deployed site

@@ -2,6 +2,10 @@
 
 **Prerequisites:**  Node.js
 
+> **Scope:** Local setup and a quick locale-add checklist. See
+> [`AGENTS.md`](AGENTS.md) for frontend agent rules. Open the detailed
+> [`ARCHITECTURE.md`](ARCHITECTURE.md) only when the task needs it.
+
 See [`ARCHITECTURE.md`](ARCHITECTURE.md) for the full SSG, routing, i18n, SEO,
 sitemap, and theme architecture.
 

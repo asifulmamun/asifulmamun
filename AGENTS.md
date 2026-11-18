@@ -1,27 +1,30 @@
 # Repository guide for coding agents
 
-## Read first
+> **Scope:** Repository-wide map and shared rules. Read for all repository
+> tasks; use the frontend architecture reference only when relevant.
+
+## Documentation map
 
 This repository contains two frontend implementations. The active Next.js
-application is in `frontend/`; `frontend-v1.0.0/` is the older static site.
+application is in `frontend/`;
 Unless a task explicitly targets the legacy site, make frontend changes in
 `frontend/`.
 
-Before changing the Next.js application, read:
+For Copilot, the auto-loaded entry point is
+[`.github/copilot-instructions.md`](.github/copilot-instructions.md). For
+other coding agents:
 
-1. [`frontend/AGENTS.md`](frontend/AGENTS.md) for frontend-specific agent rules.
-2. [`frontend/ARCHITECTURE.md`](frontend/ARCHITECTURE.md) for routing, SSG,
-   localization, SEO, sitemap, and theme behavior.
-3. [`frontend/README.md`](frontend/README.md) for local setup and the short
-   language-addition checklist.
+1. Read [`frontend/AGENTS.md`](frontend/AGENTS.md) for any frontend task.
+2. Read [`frontend/ARCHITECTURE.md`](frontend/ARCHITECTURE.md) only when work
+   involves routes, SSG, localization, SEO, sitemap, robots, llms.txt, theme,
+   deployment, or adding a page or locale.
+3. Use [`frontend/README.md`](frontend/README.md) for local setup.
 
 ## Repository map
 
 - `frontend/src/app/`: App Router route files and static metadata routes.
 - `frontend/src/components/`: shared header and page UI.
 - `frontend/src/data/`: language registry and per-language JSON content.
-- `frontend-v1.0.0/`: legacy HTML/CSS/JS site; do not treat it as the source
-  for the active Next.js application.
 - The root `README.md` is the public profile README, not the application
   architecture guide.
 - `00-git-push.bat`, `01-git-deploy-cloudflare.bat`: repository workflow

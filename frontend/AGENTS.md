@@ -1,9 +1,17 @@
 # Frontend agent guide
 
+> **Scope:** Short rules for changes under `frontend/`. Read
+> [`ARCHITECTURE.md`](ARCHITECTURE.md) only when the task touches the systems
+> listed below.
+
 The active app is a Next.js App Router project configured for static export.
-Before implementing a frontend task, read [`ARCHITECTURE.md`](ARCHITECTURE.md)
-and follow the route, locale, SEO, and static-export conventions described
-there.
+Copilot's repository-wide entry point is
+[`../.github/copilot-instructions.md`](../.github/copilot-instructions.md).
+
+Read [`ARCHITECTURE.md`](ARCHITECTURE.md) for tasks involving routes, SSG,
+localization, page data, SEO, sitemap/robots/llms.txt, theme, deployment, or
+adding a page or locale. For an isolated UI or copy change, inspect only the
+relevant source files.
 
 ## Source-of-truth rules
 
