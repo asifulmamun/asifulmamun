@@ -4,11 +4,11 @@ import content from '@/src/data/home-en.json';
 
 export default function Home() {
   return (
-    <main lang="en" className="relative min-h-screen overflow-hidden bg-white font-sans text-slate-900">
+    <>
       <Header />
-      <Banner content={content} />
-
-      
-    </main>
+      <main className="relative min-h-screen overflow-hidden bg-white font-sans text-slate-900">
+        <Banner content={content} />
+      </main>
+    </>
   );
 }

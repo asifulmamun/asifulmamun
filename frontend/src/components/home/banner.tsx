@@ -5,7 +5,7 @@ import SocialIcon from '@/src/components/global/icons';
 
 
 
-export default function banner(content) {
+export default function Banner({ content }) {
     return (
         <section className="mx-auto max-w-6xl items-center relative min-h-screen">
             <div className="grid min-h-screen grid-cols-1 gap-8 px-6 py-16 lg:grid-cols-2">
