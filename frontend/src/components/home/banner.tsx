@@ -7,7 +7,7 @@ import SocialIcon from '@/src/components/global/icons';
 
 export default function Banner({ content }) {
     return (
-        <section className="mx-auto max-w-6xl items-center relative min-h-screen">
+        <section id="home" className="mx-auto max-w-6xl items-center relative min-h-screen scroll-mt-20">
             <div className="grid min-h-screen grid-cols-1 gap-8 px-6 py-16 lg:grid-cols-2">
                 <div className="order-2 lg:order-1">
                     <p className="font-serif text-4xl sm:text-5xl">{content.intro}</p>
