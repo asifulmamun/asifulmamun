@@ -1,16 +1,16 @@
 import Image from 'next/image';
-import { Cloud, Package, ShoppingCart, Sparkles, Terminal } from 'lucide-react';
+import { Cloud, Globe, Mail, Package, ShoppingCart, Sparkles, Terminal } from 'lucide-react';
 import bannerBG from '@/src/assets/images/asifulmamun-al-mamun.png';
 import SocialIcon from '@/src/components/global/icons';
 
 const floatingSkills = [
-    // { label: 'AWS', Icon: Cloud, position: 'left-[-6%] top-[10%]', delay: 'tech-float-delay-1' },
-    // { label: 'AI', Icon: Sparkles, position: 'left-[-4%] top-[18%]', delay: 'tech-float-delay-2' },
-    // { label: 'Docker', Icon: Package, position: 'left-[-6%] top-[25%]', delay: 'tech-float-delay-3' },
-    // { label: 'Linux', Icon: Terminal, position: 'left-[-8%] top-[32%]', delay: 'tech-float-delay-1' },
-    { label: 'E-commerce Solutions', Icon: ShoppingCart, position: 'left-[30%] top-[18%]', delay: 'tech-float-delay-2' },
-    { label: 'Company static website Life-time free Hosting', Icon: ShoppingCart, position: 'left-[30%] top-[18%]', delay: 'tech-float-delay-2' },
-    { label: 'Business e-mail integration beyond hosting', Icon: ShoppingCart, position: 'left-[30%] top-[18%]', delay: 'tech-float-delay-2' },
+    // { label: 'AWS', Icon: Cloud, position: 'left-[-20%] top-[5%]', delay: 'tech-float-delay-1' },
+    // { label: 'AI', Icon: Sparkles, position: 'left-[-18%] top-[12%]', delay: 'tech-float-delay-2' },
+    // { label: 'Docker', Icon: Package, position: 'left-[-20%] top-[18%]', delay: 'tech-float-delay-3' },
+    // { label: 'Linux', Icon: Terminal, position: 'left-[-18%] top-[22%]', delay: 'tech-float-delay-1' },
+    { label: 'Company static website Life-time free hosting', Icon: Globe, position: 'left-[3%] top-[-9%] md:left-[65%] md:top-[0%]', delay: 'tech-float-delay-2' },
+    { label: 'E-commerce Solutions', Icon: ShoppingCart, position: 'left-[50%] bottom-[11%] md:left-[60%] md:top-[55%]', delay: 'tech-float-delay-2' },
+    { label: 'Business e-mail integration beyond hosting', Icon: Mail, position: 'left-[35%] bottom-[-20%] md:left-[35%] md:bottom-[10%]', delay: 'tech-float-delay-2' },
 
 ];
 
@@ -18,7 +18,7 @@ export default function Banner({ content }) {
     return (
         <section id="home" className="relative mx-auto max-w-6xl items-center scroll-mt-20">
             <div className="grid grid-cols-1 gap-8 px-6 pt-16 lg:grid-cols-2">
-                <div className="order-1 lg:order-1">
+                <div className="order-1 lg:order-1 relative">
 
                     <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-10">
                         {floatingSkills.map(({ label, Icon, position, delay }) => (
@@ -60,7 +60,7 @@ export default function Banner({ content }) {
                         {content.video.label}
                     </a>
                 </div>
-                <div className="order-2 flex justify-center lg:order-2">
+                <div className="order-2 flex justify-center lg:order-2 pt-30 md:pt-initial">
                     <div className="relative aspect-4/5 w-full max-w-md">
 
                         <svg className="absolute inset-0 h-full w-full text-slate-900/15 dark:text-white/20" viewBox="0 0 400 500" fill="none" aria-hidden="true">
