@@ -12,8 +12,9 @@
   locale. For an isolated UI or copy change, inspect only the relevant source
   and locale JSON.
 - Edit source files, not generated `frontend/out/` or `frontend/.next/`.
-- Keep shared root UI/scripts in `frontend/src/components/global/site-shell.tsx`
-  and shared metadata defaults in `frontend/src/data/site-metadata.ts`.
+- Keep shared document markup and script insertion points in
+  `frontend/src/components/global/site-layout.tsx`; keep shared metadata
+  defaults in `frontend/src/data/site-metadata.ts`.
 - Use `pnpm` commands from `frontend/`; run `pnpm exec tsc --noEmit` and
   `pnpm build` when changing application code.
 - Do not read local `.env` values into responses or commit credentials.

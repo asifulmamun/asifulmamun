@@ -21,11 +21,14 @@ relevant source files.
 - Add every page's content and SEO data for every supported language.
 - Keep `src/data/languages.ts`, `src/data/common-content.ts`, and
   `src/data/locale-content.ts` consistent when registering a locale.
-- Put shared header, body styling, and site-wide UI/scripts in
-  `src/components/global/site-shell.tsx`; do not duplicate them in both root
-  layouts.
+- Put shared `<html>`, `<head>`, `<body>`, header, and common script insertion
+  points in `src/components/global/site-layout.tsx`; do not duplicate them in
+  both root layouts.
 - Keep shared metadata defaults in `src/data/site-metadata.ts`. Page-specific
   SEO must continue to come from locale JSON through `createPageMetadata()`.
+- Use `src/app/icon.png` for the shared Next.js favicon. Use Next.js Metadata
+  for SEO and icons; put common head/body/footer snippets in the matching
+  insertion point in `site-layout.tsx`.
 - English is the default, unprefixed locale. Do not add `/en` routes unless the
   URL policy is intentionally changed across routing, links, metadata, and the
   sitemap.

@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import SiteShell, {
-  siteBodyClassName,
-} from '@/src/components/global/site-shell';
+import SiteLayout from '@/src/components/global/site-layout';
 import {
   getLocalizedStaticParams,
   isLocale,
@@ -29,10 +27,6 @@ export default async function LocalizedLayout({
   if (!isLocale(lang) || lang === 'en') notFound();
 
   return (
-    <html lang={languages[lang].htmlLang} suppressHydrationWarning>
-      <body className={siteBodyClassName}>
-        <SiteShell>{children}</SiteShell>
-      </body>
-    </html>
+    <SiteLayout lang={languages[lang].htmlLang}>{children}</SiteLayout>
   );
 }

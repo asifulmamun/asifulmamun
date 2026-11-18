@@ -30,11 +30,13 @@ English route files live in `src/app/(en)/`. Non-default locale routes live in
 `src/app/[lang]/`; each locale uses the same page slugs. The localized layout
 sets the document's `html lang` attribute from the locale registry.
 
-The two root layouts are separate only because each must set a different
-`html lang`. They both use `src/components/global/site-shell.tsx` for the
-shared header, body classes, and the insertion point for site-wide UI or
-scripts. Keep shared metadata configuration in `src/data/site-metadata.ts`;
-do not duplicate common markup or defaults between the layouts.
+The two root layouts are separate only because each must select the correct
+`html lang` and export Next.js metadata. Both delegate document markup to
+`src/components/global/site-layout.tsx`. That shared component owns the
+`<html>`, `<head>`, and `<body>`, header, theme classes, and clear insertion
+points for common head tags, after-body-start markup, and footer scripts. Put
+shared metadata values in `src/data/site-metadata.ts`; do not duplicate common
+markup or defaults between the layouts.
 
 The supported locales and their labels are registered in
 `src/data/languages.ts`. `defaultLocale` is `en`. The localized layout and
@@ -163,9 +165,14 @@ When deploying to another domain, set `NEXT_PUBLIC_BASE_URL` to its absolute
 origin, for example `https://example.com`.
 
 Add site-wide Google verification metadata to `siteMetadata` in this same
-module. Add configured site-wide client scripts or pixels once through the
-shared `SiteShell`; do not paste them into both root layouts. Use the actual
-provider ID/configuration and follow any required consent policy.
+module. Add custom head tags, body-start snippets (such as the GTM noscript
+fallback), and footer scripts at their corresponding insertion points in
+`site-layout.tsx`. Use the actual provider ID/configuration and follow any
+required consent policy.
+
+`src/app/icon.png` is the shared Next.js file-based favicon for all routes and
+locales; replace that file to change the site icon. A default social-preview
+image should be placed in `public/` and added once to `baseOpenGraph.images`.
 
 ## Sitemap, robots, and LLM information
 
@@ -176,6 +183,19 @@ provider ID/configuration and follow any required consent policy.
 - `src/app/llms.txt/route.ts` serves a static, English-only `/llms.txt`.
   It is not currently generated from locale JSON; update it explicitly if its
   content or language coverage should change.
+
+## Shared head and scripts
+
+The shared document component is `src/components/global/site-layout.tsx`.
+Place shared custom tags in its `<head>`, common code immediately after the
+opening `<body>` (for example a GTM `<noscript>` fallback), and common footer
+scripts after `{children}`. These locations are rendered for both English and
+localized routes.
+
+Use Next.js Metadata exports and `src/data/site-metadata.ts` for SEO tags and
+verification metadata instead of hand-writing duplicate title/description
+tags. `src/app/icon.png` is the shared file-based favicon. Add scripts only
+with the actual provider configuration and any required consent handling.
 
 ## Theme
 

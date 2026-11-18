@@ -1,6 +1,4 @@
-import SiteShell, {
-  siteBodyClassName,
-} from '@/src/components/global/site-shell';
+import SiteLayout from '@/src/components/global/site-layout';
 import { siteMetadata } from '@/src/data/site-metadata';
 import '../globals.css';
 
@@ -12,10 +10,6 @@ export default function EnglishLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={siteBodyClassName}>
-        <SiteShell>{children}</SiteShell>
-      </body>
-    </html>
+    <SiteLayout lang="en">{children}</SiteLayout>
   );
 }
