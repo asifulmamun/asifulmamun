@@ -15,6 +15,11 @@ import {
 
 const supportedPages = ['', 'about', 'service', 'contact'];
 
+function applyTheme(isDarkMode: boolean) {
+    document.documentElement.dataset.theme = isDarkMode ? 'dark' : 'light';
+    document.documentElement.style.colorScheme = isDarkMode ? 'dark' : 'light';
+}
+
 export default function Header() {
     const pathname = usePathname();
     const router = useRouter();
@@ -40,17 +45,22 @@ export default function Header() {
         const savedTheme = window.localStorage.getItem('navbar-theme');
 
         if (savedTheme === 'dark' || savedTheme === 'light') {
-            setDarkMode(savedTheme === 'dark');
+            const isDarkMode = savedTheme === 'dark';
+            setDarkMode(isDarkMode);
+            applyTheme(isDarkMode);
             return;
         }
 
         const systemTheme = window.matchMedia?.('(prefers-color-scheme: dark)');
-        setDarkMode(systemTheme?.matches ?? false);
+        const isDarkMode = systemTheme?.matches ?? false;
+        setDarkMode(isDarkMode);
+        applyTheme(isDarkMode);
 
         function followSystemTheme(event: MediaQueryListEvent) {
             const preference = window.localStorage.getItem('navbar-theme');
             if (preference !== 'dark' && preference !== 'light') {
                 setDarkMode(event.matches);
+                applyTheme(event.matches);
             }
         }
 
@@ -59,11 +69,10 @@ export default function Header() {
     }, []);
 
     function toggleTheme() {
-        setDarkMode((current) => {
-            const next = !current;
-            window.localStorage.setItem('navbar-theme', next ? 'dark' : 'light');
-            return next;
-        });
+        const next = !darkMode;
+        setDarkMode(next);
+        window.localStorage.setItem('navbar-theme', next ? 'dark' : 'light');
+        applyTheme(next);
     }
 
     useEffect(() => {
@@ -155,8 +164,8 @@ export default function Header() {
                     <button
                         type="button"
                         onClick={toggleTheme}
-                        aria-label={`Switch to ${darkMode ? 'light' : 'dark'} navbar`}
-                        title={`Switch to ${darkMode ? 'light' : 'dark'} navbar`}
+                        aria-label={`Switch to ${darkMode ? 'light' : 'dark'} mode`}
+                        title={`Switch to ${darkMode ? 'light' : 'dark'} mode`}
                         className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-colors ${darkMode ? 'border-white/15 bg-white/[0.08] text-white hover:bg-white/[0.16]' : 'border-white/80 bg-white/65 text-slate-700 hover:bg-white'}`}
                     >
                         {darkMode ? <Sun aria-hidden="true" size={18} /> : <Moon aria-hidden="true" size={18} />}

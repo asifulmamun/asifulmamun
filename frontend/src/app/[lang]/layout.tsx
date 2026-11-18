@@ -28,7 +28,7 @@ export default async function LocalizedLayout({
 
   return (
     <html lang={languages[lang].htmlLang} suppressHydrationWarning>
-      <body className="bg-white text-slate-900 antialiased overflow-x-hidden selection:bg-accent selection:text-white">
+      <body className="bg-white text-slate-900 antialiased overflow-x-hidden selection:bg-accent selection:text-white dark:bg-slate-950 dark:text-slate-100">
         <Header />
         {children}
       </body>

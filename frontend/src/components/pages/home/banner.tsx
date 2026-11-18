@@ -15,10 +15,10 @@ export default function Banner({ content }) {
                     <svg className="mt-1 h-3 w-56 text-accent" viewBox="0 0 230 12" fill="none" aria-hidden="true">
                         <path d="M2 8c14-8 20 4 34-2s20 4 34-2 20 4 34-2 20 4 34-2 20 4 34-2 20 4 34-2 20 4 34-2 20 4 34-2 20 4 34-2 20 4 34-2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                     </svg>
-                    <p className="mt-8 max-w-md text-slate-500">{content.description}</p>
+                    <p className="mt-8 max-w-md text-slate-500 dark:text-slate-300">{content.description}</p>
 
                     <div className="mt-10 flex items-center gap-8">
-                        <a href={content.resume.href} className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-7 py-4 text-sm transition hover:border-accent hover:bg-accent hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent">
+                        <a href={content.resume.href} className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-7 py-4 text-sm transition hover:border-accent hover:bg-accent hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent dark:border-white/20">
                             {content.resume.label}
                             <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                                 <path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16" />
@@ -26,8 +26,8 @@ export default function Banner({ content }) {
                         </a>
                     </div>
 
-                    <a href={content.video.href} className="mt-12 inline-flex items-center gap-4 text-slate-500 transition hover:text-slate-900">
-                        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 text-accent">
+                    <a href={content.video.href} className="mt-12 inline-flex items-center gap-4 text-slate-500 transition hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">
+                        <span className="flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 text-accent dark:bg-slate-800">
                             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M8 5v14l11-7z" />
                             </svg>
@@ -37,9 +37,9 @@ export default function Banner({ content }) {
                 </div>
                 <div className="order-2 flex justify-center lg:order-2">
                     <div className="relative aspect-4/5 w-full max-w-md">
-                        <svg className="absolute inset-0 h-full w-full" viewBox="0 0 400 500" fill="none" aria-hidden="true">
-                            <circle cx="170" cy="250" r="200" stroke="rgba(15,23,42,.14)" />
-                            <circle cx="170" cy="250" r="165" stroke="rgba(15,23,42,.08)" />
+                        <svg className="absolute inset-0 h-full w-full text-slate-900/15 dark:text-white/20" viewBox="0 0 400 500" fill="none" aria-hidden="true">
+                            <circle cx="170" cy="250" r="200" stroke="currentColor" />
+                            <circle cx="170" cy="250" r="165" stroke="currentColor" opacity=".55" />
                         </svg>
 
                         {/* <div className="absolute inset-x-6 bottom-0 top-8 overflow-hidden rounded-t-[40%] border border-dashed border-slate-300 bg-slate-50"> */}
@@ -58,7 +58,7 @@ export default function Banner({ content }) {
                                 href={social.href}
                                 aria-label={social.label}
                                 style={{ left: social.x, top: social.y, transform: 'translate(-50%, -50%)' }}
-                                className="absolute flex h-14 w-14 items-center justify-center rounded-full border border-slate-300 bg-white text-accent transition hover:border-accent hover:text-accent"
+                                className="absolute flex h-14 w-14 items-center justify-center rounded-full border border-slate-300 bg-white text-accent transition hover:border-accent hover:text-accent dark:border-white/20 dark:bg-slate-900"
                             >
                                 <SocialIcon name={social.icon} />
                             </a>
