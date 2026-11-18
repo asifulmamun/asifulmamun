@@ -103,7 +103,7 @@ export default function Header() {
                 <Link
                     href={getLocalePath(currentLocale, '')}
                     aria-label="Asiful Mamun home"
-                    className={`relative z-10 shrink-0 rounded-xl p-1 transition-colors ${darkMode ? 'bg-white/90' : 'bg-white/45'}`}
+                    className={`relative z-10 shrink-0 rounded-xl p-1 transition-colors`}
                 >
                     <Image src={logo} alt="Asiful Mamun" priority className="h-11 w-[78px] object-contain sm:h-[54px] sm:w-[96px]" />
                 </Link>
