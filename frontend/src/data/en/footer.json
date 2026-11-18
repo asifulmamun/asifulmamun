@@ -7,6 +7,22 @@
   "email": "hello@asifulmamun.info.bd",
   "copyright": "All rights reserved",
   "builtWith": "Built with Next.js, Hosted on Cloudflare",
+  "linkTitles": {
+    "pages": "Explore",
+    "support": "Information"
+  },
+  "pageLinks": [
+    { "label": "Home", "href": "/" },
+    { "label": "About", "href": "/about" },
+    { "label": "Services", "href": "/service" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "supportLinks": [
+    { "label": "Privacy Policy", "href": "/privacy-policy" },
+    { "label": "FAQ", "href": "/faq" },
+    { "label": "Terms & Conditions", "href": "/terms" },
+    { "label": "Affiliate", "href": "/affiliate" }
+  ],
   "socialLinks": [
     { "label": "LinkedIn", "href": "https://linkedin.com/in/asifulmamun", "icon": "linkedin" },
     { "label": "Facebook", "href": "https://facebook.com/asifulmamun.info.bd", "icon": "facebook" },

@@ -6,7 +6,23 @@
   "phone": "+880 1721 600 688",
   "email": "hello@asifulmamun.info.bd",
   "copyright": "সর্বস্বত্ব সংরক্ষিত",
-  "builtWith": "Next.js দিয়ে নির্মিত",
+  "builtWith": "Next.js ও Cloudflare দিয়ে নির্মিত",
+  "linkTitles": {
+    "pages": "পেজসমূহ",
+    "support": "তথ্য"
+  },
+  "pageLinks": [
+    { "label": "হোম", "href": "/" },
+    { "label": "পরিচিতি", "href": "/about" },
+    { "label": "সেবাসমূহ", "href": "/service" },
+    { "label": "যোগাযোগ", "href": "/contact" }
+  ],
+  "supportLinks": [
+    { "label": "গোপনীয়তা নীতি", "href": "/privacy-policy" },
+    { "label": "সাধারণ প্রশ্ন", "href": "/faq" },
+    { "label": "শর্তাবলি", "href": "/terms" },
+    { "label": "Affiliate", "href": "/affiliate" }
+  ],
   "socialLinks": [
     { "label": "LinkedIn", "href": "https://linkedin.com/in/asifulmamun", "icon": "linkedin" },
     { "label": "Facebook", "href": "https://facebook.com/asifulmamun.info.bd", "icon": "facebook" },

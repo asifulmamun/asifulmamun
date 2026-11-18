@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import SocialIcon from '@/src/components/global/icons';
 import { footerContent } from '@/src/data/footer-content';
-import { isLocale } from '@/src/data/languages';
+import { getLocalePath, isLocale } from '@/src/data/languages';
 
 export default function Footer({ lang }: { lang: string }) {
   const locale = isLocale(lang) ? lang : 'en';
@@ -13,7 +13,7 @@ export default function Footer({ lang }: { lang: string }) {
   return (
     <footer className="border-t border-slate-200/80 bg-[#f7f8f8] dark:border-white/10 dark:bg-slate-950">
       <div className="mx-auto max-w-6xl px-6 py-12 sm:py-16">
-        <div className="grid gap-8 lg:grid-cols-[1fr_.8fr] lg:items-end">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.35fr_.55fr_.75fr_1fr]">
           <div>
             <Link
               href={homeHref}
@@ -28,7 +28,35 @@ export default function Footer({ lang }: { lang: string }) {
             </p>
           </div>
 
-          <div className="rounded-[28px] border border-slate-200/80 bg-white/70 p-5 shadow-lg shadow-slate-900/5 backdrop-blur-sm sm:p-6 dark:border-white/10 dark:bg-slate-900/60">
+          <nav aria-label={content.linkTitles.pages}>
+            <h2 className="font-serif text-xl font-semibold">{content.linkTitles.pages}</h2>
+            <ul className="mt-5 space-y-3 text-sm text-slate-600 dark:text-slate-300">
+              {content.pageLinks.map((link) => {
+                const page = link.href === '/' ? '' : link.href.slice(1);
+                return (
+                  <li key={link.label}>
+                    <Link className="transition hover:text-accent" href={getLocalePath(locale, page)}>{link.label}</Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+
+          <nav aria-label={content.linkTitles.support}>
+            <h2 className="font-serif text-xl font-semibold">{content.linkTitles.support}</h2>
+            <ul className="mt-5 space-y-3 text-sm text-slate-600 dark:text-slate-300">
+              {content.supportLinks.map((link) => {
+                const page = link.href.slice(1);
+                return (
+                  <li key={link.label}>
+                    <Link className="transition hover:text-accent" href={getLocalePath(locale, page)}>{link.label}</Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+
+          <div className="rounded-[28px] border border-slate-200/80 bg-white/70 p-5 shadow-lg shadow-slate-900/5 backdrop-blur-sm dark:border-white/10 dark:bg-slate-900/60 sm:col-span-2 lg:col-span-1">
             <div className="grid gap-3 text-sm">
               <a className="flex items-center gap-3 transition hover:text-accent" href={`tel:${content.phone}`}>
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent/10">
