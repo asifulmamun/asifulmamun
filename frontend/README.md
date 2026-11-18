@@ -2,6 +2,9 @@
 
 **Prerequisites:**  Node.js
 
+See [`ARCHITECTURE.md`](ARCHITECTURE.md) for the full SSG, routing, i18n, SEO,
+sitemap, and theme architecture.
+
 1. Install dependencies:
    `npm install`
 3. Run the app:
