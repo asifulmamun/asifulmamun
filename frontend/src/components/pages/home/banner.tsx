@@ -9,7 +9,7 @@ const floatingSkills = [
     // { label: 'Docker', Icon: Package, position: 'left-[-20%] top-[18%]', delay: 'tech-float-delay-3' },
     // { label: 'Linux', Icon: Terminal, position: 'left-[-18%] top-[22%]', delay: 'tech-float-delay-1' },
     { label: 'Company static website Life-time free hosting', Icon: Globe, position: 'left-[3%] top-[-9%] md:left-[65%] md:top-[0%]', delay: 'tech-float-delay-2' },
-    { label: 'E-commerce Solutions', Icon: ShoppingCart, position: 'left-[50%] bottom-[11%] md:left-[60%] md:top-[55%]', delay: 'tech-float-delay-2' },
+    { label: 'E-commerce Solutions', Icon: ShoppingCart, position: 'left-[50%] bottom-[11%] md:left-[60%] md:top-[55%] md:bottom-auto', delay: 'tech-float-delay-2' },
     { label: 'Business e-mail integration beyond hosting', Icon: Mail, position: 'left-[35%] bottom-[-20%] md:left-[35%] md:bottom-[10%]', delay: 'tech-float-delay-2' },
 
 ];
