@@ -18,7 +18,7 @@ export default function Banner({ content }) {
                     <p className="mt-8 max-w-md text-slate-500 dark:text-slate-300">{content.description}</p>
 
                     <div className="mt-10 flex items-center gap-8">
-                        <a href={content.resume.href} className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-7 py-4 text-sm transition hover:border-accent hover:bg-accent hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent dark:border-white/20">
+                        <a href={content.resume.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-7 py-4 text-sm transition hover:border-accent hover:bg-accent hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent dark:border-white/20">
                             {content.resume.label}
                             <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                                 <path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16" />
@@ -26,7 +26,7 @@ export default function Banner({ content }) {
                         </a>
                     </div>
 
-                    <a href={content.video.href} className="mt-12 inline-flex items-center gap-4 text-slate-500 transition hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">
+                    <a href={content.video.href} target="_blank" rel="noopener noreferrer" className="mt-12 inline-flex items-center gap-4 text-slate-500 transition hover:text-slate-900 dark:text-slate-300 dark:hover:text-white">
                         <span className="flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 text-accent dark:bg-slate-800">
                             <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M8 5v14l11-7z" />
@@ -56,6 +56,8 @@ export default function Banner({ content }) {
                             <a
                                 key={social.label}
                                 href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 aria-label={social.label}
                                 style={{ left: social.x, top: social.y, transform: 'translate(-50%, -50%)' }}
                                 className="absolute flex h-14 w-14 items-center justify-center rounded-full border border-slate-300 bg-white text-accent transition hover:border-accent hover:text-accent dark:border-white/20 dark:bg-slate-900"

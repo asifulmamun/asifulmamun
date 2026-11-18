@@ -185,7 +185,7 @@ export default function Header() {
 
             <div
                 id="mobile-navigation"
-                className={`mx-auto mt-3 w-full max-w-[1200px] overflow-hidden rounded-[24px] border p-3 backdrop-blur-[30px] transition-all duration-300 lg:hidden ${glass} ${menuOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-3 opacity-0'}`}
+                className={`absolute left-4 right-4 top-full z-50 mx-auto mt-3 max-w-[1200px] overflow-hidden rounded-[24px] border p-3 backdrop-blur-[30px] transition-all duration-300 lg:hidden ${glass} ${menuOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-3 opacity-0'}`}
                 aria-hidden={!menuOpen}
             >
                 <ul className="grid gap-1">

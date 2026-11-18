@@ -19,10 +19,10 @@ const siteUrl = new URL(
 export const siteMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Asiful Mamun | Web Developer',
+    default: 'Asiful Mamun | Software Engineer',
     template: '%s | Asiful Mamun',
   },
-  description: 'Asiful Mamun is a web developer building fast, clean websites.',
+  description: 'Asiful Mamun is a Software Engineer building fast, clean websites.',
   openGraph: {
     siteName: 'Asiful Mamun',
     type: 'website',
