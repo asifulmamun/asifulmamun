@@ -1,0 +1,10 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "service": "Services",
+    "contact": "Contact",
+    "talk": "Let's talk",
+    "language": "Language"
+  }
+}

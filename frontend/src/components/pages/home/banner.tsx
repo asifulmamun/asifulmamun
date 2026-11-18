@@ -7,13 +7,9 @@ import SocialIcon from '@/src/components/global/icons';
 
 export default function Banner({ content }) {
     return (
-        <section id="home" className="relative mx-auto max-w-6xl items-center min-h-[calc(100vh-72px)] scroll-mt-20 bg-[linear-gradient(to_right,#f5f5f5,#e8e7e5)]">
-                        <div className="absolute inset-x-0 bottom-0 z-10 h-28 bg-linear-to-t from-[#f5f5f5] via-[#f5f5f5]/80 to-transparent pointer-events-none" />
-            <div className="grid min-h-screen grid-cols-1 gap-8 px-6 py-16 lg:grid-cols-2">
-                
-                
-                
-                <div className="order-2 lg:order-1">
+        <section id="home" className="relative mx-auto max-w-6xl items-center scroll-mt-20">
+            <div className="grid grid-cols-1 gap-8 px-6 pt-16 lg:grid-cols-2">
+                <div className="order-1 lg:order-1">
                     <p className="font-serif text-4xl sm:text-5xl">{content.intro}</p>
                     <h1 className="mt-2 font-serif text-5xl font-semibold sm:text-7xl">{content.name}</h1>
                     <svg className="mt-1 h-3 w-56 text-accent" viewBox="0 0 230 12" fill="none" aria-hidden="true">
@@ -39,8 +35,7 @@ export default function Banner({ content }) {
                         {content.video.label}
                     </a>
                 </div>
-
-                <div className="order-1 flex justify-center lg:order-2">
+                <div className="order-2 flex justify-center lg:order-2">
                     <div className="relative aspect-4/5 w-full max-w-md">
                         <svg className="absolute inset-0 h-full w-full" viewBox="0 0 400 500" fill="none" aria-hidden="true">
                             <circle cx="170" cy="250" r="200" stroke="rgba(15,23,42,.14)" />
@@ -53,7 +48,7 @@ export default function Banner({ content }) {
                                 alt="Asiful Mamun"
                                 fill
                                 sizes="(min-width: 1024px) 400px, calc(100vw - 3rem)"
-                                className="object-contain object-bottom mix-blend-multiply"
+                                className="object-contain object-bottom"
                             />
                         {/* </div> */}
 

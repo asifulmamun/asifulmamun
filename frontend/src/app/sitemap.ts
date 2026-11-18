@@ -1,15 +1,20 @@
 import type { MetadataRoute } from 'next';
+import { getLocalePath, isLocale, languages } from '@/src/data/languages';
+import { getSiteUrl } from '@/src/data/site-metadata';
 
 export const dynamic = 'force-static';
 
-const siteUrl = (process.env.NEXT_PUBLIC_BASE_URL || 'https://asifulmamun.info.bd').replace(/\/$/, '');
-
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ['', '/about', '/service', '/contact'];
+  const pages = ['', 'about', 'service', 'contact'];
+  const siteUrl = getSiteUrl();
 
-  return routes.map((route, index) => ({
-      url: `${siteUrl}${route}`,
-      changeFrequency: 'monthly',
+  return Object.keys(languages).flatMap((locale) => {
+    if (!isLocale(locale)) return [];
+
+    return pages.map((page, index) => ({
+      url: `${siteUrl}${getLocalePath(locale, page)}`,
+      changeFrequency: 'monthly' as const,
       priority: index === 0 ? 1 : 0.7,
     }));
+  });
 }

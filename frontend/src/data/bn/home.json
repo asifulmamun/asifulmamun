@@ -1,0 +1,23 @@
+{
+  "seo": {
+    "title": "আসিফুল মামুন | ওয়েব ডেভেলপার",
+    "description": "আসিফুল মামুনের পোর্টফোলিও দেখুন। তিনি দ্রুত, পরিচ্ছন্ন ও আধুনিক ওয়েবসাইট তৈরি করেন।"
+  },
+  "intro": "হ্যালো! আমি",
+  "name": "Asiful Mamun",
+  "description": "দ্রুত, পরিচ্ছন্ন ও আধুনিক ওয়েবসাইট তৈরি করি।",
+  "resume": {
+    "label": "জীবনবৃত্তান্ত",
+    "href": "#"
+  },
+  "video": {
+    "label": "ভিডিও দেখুন",
+    "href": "#"
+  },
+  "socialLinks": [
+    { "label": "Facebook", "href": "#", "icon": "facebook", "x": "78%", "y": "18%" },
+    { "label": "Dribbble", "href": "#", "icon": "dribbble", "x": "91%", "y": "38%" },
+    { "label": "Behance", "href": "#", "icon": "behance", "x": "93%", "y": "62%" },
+    { "label": "LinkedIn", "href": "#", "icon": "linkedin", "x": "84%", "y": "84%" }
+  ]
+}

@@ -1,6 +1,6 @@
 import EmptyPage from '@/src/components/pages/empty-page';
-import content from '@/src/data/en/service.json';
+import type { SimplePageContent } from '@/src/data/locale-content';
 
-export default function ServicePage() {
+export default function ServicePage({ content }: { content: SimplePageContent }) {
   return <EmptyPage title={content.title} />;
 }

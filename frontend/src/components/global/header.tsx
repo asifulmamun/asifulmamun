@@ -3,22 +3,36 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUpRight, Menu, Moon, Sun, X } from 'lucide-react';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import logo from '@/src/assets/images/asifulmamun-logo.png';
+import { commonContent } from '@/src/data/common-content';
+import {
+    getLocalePath,
+    isLocale,
+    languages,
+} from '@/src/data/languages';
 
-const navigation = [
-    { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
-    { label: 'Service', href: '/service' },
-    { label: 'Contact', href: '/contact' },
-];
+const supportedPages = ['', 'about', 'service', 'contact'];
 
 export default function Header() {
     const pathname = usePathname();
+    const router = useRouter();
     const [darkMode, setDarkMode] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const [hoveredItem, setHoveredItem] = useState<number | null>(null);
+    const pathSegments = pathname.split('/').filter(Boolean);
+    const currentLocale = isLocale(pathSegments[0]) ? pathSegments[0] : 'en';
+    const currentPage = currentLocale === 'en'
+        ? pathSegments.join('/')
+        : pathSegments.slice(1).join('/');
+    const navigationLabels = commonContent[currentLocale].navigation;
+    const navigation = [
+        { label: navigationLabels.home, href: getLocalePath(currentLocale, '') },
+        { label: navigationLabels.about, href: getLocalePath(currentLocale, 'about') },
+        { label: navigationLabels.service, href: getLocalePath(currentLocale, 'service') },
+        { label: navigationLabels.contact, href: getLocalePath(currentLocale, 'contact') },
+    ];
     const activeIndex = navigation.findIndex((item) => item.href === pathname);
     const indicatorIndex = hoveredItem ?? Math.max(activeIndex, 0);
 
@@ -55,7 +69,25 @@ export default function Header() {
     useEffect(() => {
         setMenuOpen(false);
         setHoveredItem(null);
-    }, [pathname]);
+        const savedLocale = window.localStorage.getItem('site-language');
+
+        if (currentLocale !== 'en') {
+            window.localStorage.setItem('site-language', currentLocale);
+        } else if (
+            savedLocale
+            && isLocale(savedLocale)
+            && savedLocale !== 'en'
+            && supportedPages.includes(currentPage)
+        ) {
+            router.replace(getLocalePath(savedLocale, currentPage));
+        }
+    }, [currentLocale, currentPage, pathname, router]);
+
+    function changeLanguage(value: string) {
+        if (!isLocale(value)) return;
+        window.localStorage.setItem('site-language', value);
+        router.push(getLocalePath(value, currentPage));
+    }
 
     const glass = darkMode
         ? 'border-white/10 bg-[#151a22]/75 text-white shadow-[inset_0_1px_0_rgba(255,255,255,.16),0_20px_50px_rgba(0,0,0,.4)]'
@@ -69,7 +101,7 @@ export default function Header() {
                 className={`relative mx-auto flex h-[72px] w-full max-w-[1200px] items-center justify-between rounded-[24px] border px-3 backdrop-blur-[30px] transition-colors duration-300 sm:h-[78px] sm:rounded-[30px] sm:px-[18px] ${glass}`}
             >
                 <Link
-                    href="/"
+                    href={getLocalePath(currentLocale, '')}
                     aria-label="Asiful Mamun home"
                     className={`relative z-10 shrink-0 rounded-xl p-1 transition-colors ${darkMode ? 'bg-white/90' : 'bg-white/45'}`}
                 >
@@ -99,11 +131,26 @@ export default function Header() {
                 </div>
 
                 <div className="flex items-center gap-2 sm:gap-3">
+                    <label className="sr-only" htmlFor="language-select">
+                        {navigationLabels.language}
+                    </label>
+                    <select
+                        id="language-select"
+                        value={currentLocale}
+                        onChange={(event) => changeLanguage(event.currentTarget.value)}
+                        className={`h-11 max-w-[105px] rounded-full border px-3 text-sm outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${darkMode ? 'border-white/15 bg-[#151a22] text-white' : 'border-white/80 bg-white/65 text-slate-800'}`}
+                    >
+                        {Object.entries(languages).map(([code, language]) => (
+                            <option key={code} value={code}>
+                                {language.label}
+                            </option>
+                        ))}
+                    </select>
                     <Link
-                        href="/contact"
+                        href={getLocalePath(currentLocale, 'contact')}
                         className={`hidden h-[50px] items-center gap-2 rounded-[14px] border px-5 text-sm font-medium backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 sm:inline-flex ${darkMode ? 'border-white/15 bg-white/[0.08] text-white hover:bg-white/[0.15]' : 'border-white/80 bg-white/65 text-slate-800 hover:bg-white'}`}
                     >
-                        Let’s talk <ArrowUpRight aria-hidden="true" size={16} />
+                        {navigationLabels.talk} <ArrowUpRight aria-hidden="true" size={16} />
                     </Link>
                     <button
                         type="button"
@@ -148,12 +195,12 @@ export default function Header() {
                     ))}
                 </ul>
                 <Link
-                    href="/contact"
+                    href={getLocalePath(currentLocale, 'contact')}
                     tabIndex={menuOpen ? 0 : -1}
                     onClick={() => setMenuOpen(false)}
                     className={`mt-2 flex h-12 items-center justify-center gap-2 rounded-2xl border text-sm font-medium ${darkMode ? 'border-white/15 bg-white/10 text-white' : 'border-white/80 bg-white/75 text-slate-800'}`}
                 >
-                    Let’s talk <ArrowUpRight aria-hidden="true" size={16} />
+                    {navigationLabels.talk} <ArrowUpRight aria-hidden="true" size={16} />
                 </Link>
             </div>
         </header>

@@ -1,8 +1,7 @@
 import type { MetadataRoute } from 'next';
+import { getSiteUrl } from '@/src/data/site-metadata';
 
 export const dynamic = 'force-static';
-
-const siteUrl = (process.env.NEXT_PUBLIC_BASE_URL || 'https://asifulmamun.info.bd').replace(/\/$/, '');
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -10,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: `${siteUrl}/sitemap.xml`,
+    sitemap: `${getSiteUrl()}/sitemap.xml`,
   };
 }
