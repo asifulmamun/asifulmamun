@@ -155,8 +155,8 @@ export default function Header() {
                 >
                     <span
                         aria-hidden="true"
-                        className={`pointer-events-none absolute left-2 top-2 h-11 w-[90px] rounded-[14px] backdrop-blur-[30px] transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] ${darkMode ? 'bg-white/[0.12] shadow-[inset_0_1px_0_rgba(255,255,255,.3),0_5px_20px_rgba(255,255,255,.05)]' : 'bg-white/80 shadow-[inset_0_1px_0_rgba(255,255,255,.95),0_5px_20px_rgba(15,23,42,.08)]'}`}
-                        style={{ transform: `translateX(${indicatorIndex * 96}px)` }}
+                        className={`pointer-events-none absolute left-2 top-2 h-11 w-[90px] rounded-[14px] will-change-transform backdrop-blur-[30px] transition-transform duration-500 ease-[cubic-bezier(.22,1,.36,1)] ${darkMode ? 'bg-white/[0.12] shadow-[inset_0_1px_0_rgba(255,255,255,.3),0_5px_20px_rgba(255,255,255,.05)]' : 'bg-white/80 shadow-[inset_0_1px_0_rgba(255,255,255,.95),0_5px_20px_rgba(15,23,42,.08)]'}`}
+                        style={{ transform: `translate3d(${indicatorIndex * 96}px, 0, 0)` }}
                     />
                     {navigation.map((item, index) => (
                         <Link
@@ -164,7 +164,7 @@ export default function Header() {
                             href={item.href}
                             aria-current={pathname === item.href ? 'page' : undefined}
                             onMouseEnter={() => setHoveredItem(index)}
-                            className={`relative z-10 flex h-11 w-22.5 items-center justify-center rounded-[14px] text-sm transition duration-300 hover:-translate-y-0.5 hover:text-current focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${pathname === item.href ? 'font-semibold text-current' : muted}`}
+                            className={`relative z-10 flex h-11 w-[90px] items-center justify-center rounded-[14px] text-sm transition duration-300 hover:-translate-y-0.5 hover:text-current focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent ${pathname === item.href ? 'font-semibold text-current' : muted}`}
                         >
                             {item.label}
                         </Link>
