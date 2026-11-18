@@ -1,7 +1,114 @@
 {
   "seo": {
-    "title": "About | Asiful Mamun",
-    "description": "Learn about Asiful Mamun, a Software Engineer focused on building fast, clean websites."
+    "title": "About | Al Mamun - Software Engineer",
+    "description": "About Al Mamun, a PHP, Laravel, WordPress and cloud software engineer in Bangladesh, with experience in AdTech, e-commerce, AI infrastructure and Linux systems."
   },
-  "title": "About"
+  "profile": {
+    "name": "AL MAMUN",
+    "title": "Software Engineer | PHP | Laravel | Linux | WordPress | AWS",
+    "location": "Shekhertek, Adabor, Dhaka 1207",
+    "phone": "+880 1721 600 688",
+    "email": "hello@asifulmamun.info.bd",
+    "summary": "Results-driven Full-Stack Software Engineer with expertise in PHP, Laravel, WordPress, JavaScript and Next.js. I specialize in backend architecture, frontend development, AdTech, custom e-commerce applications and Linux server administration. I diagnose complex problems systematically, trace them to their root causes and build clean, long-term solutions."
+  },
+  "skills": {
+    "title": "Skills",
+    "groups": [
+      { "title": "Backend & Architecture", "items": ["PHP (OOP)", "Laravel", "WordPress", "WooCommerce", "RESTful APIs", "Node.js", "Python", "System Architecture"] },
+      { "title": "Frontend", "items": ["JavaScript (ES6+)", "Next.js", "React", "Tailwind CSS", "Alpine.js", "SASS", "Bootstrap", "jQuery", "Vite", "Webpack", "WebGL"] },
+      { "title": "AI & Optimization", "items": ["Local LLM / Ollama", "Prompt Engineering", "Agentic AI APIs", "Cursor AI", "Gemini CLI", "Claude", "ChatGPT", "Token & Cost Optimization"] },
+      { "title": "Cloud & DevOps", "items": ["AWS", "GCP", "DigitalOcean", "Hetzner", "Docker", "Linux", "Nginx", "Apache", "VPS", "Cloudflare", "CI/CD"] },
+      { "title": "Data & Tools", "items": ["MySQL", "PostgreSQL", "Redis", "SQL Optimization", "Active Directory", "Network Security", "Git", "ClickUp", "Slack", "Figma"] }
+    ]
+  },
+  "experience": {
+    "title": "Work Experience",
+    "items": [
+      {
+        "company": "SEBPO",
+        "role": "Creative Developer",
+        "location": "Dhanmondi, Dhaka",
+        "period": "Oct 2025 – Present",
+        "points": ["Architect scalable Laravel and Next.js applications and deliver AdTech features across client projects with 100% on-time releases.", "Deploy applications across AWS and local VPS/intranet environments, reducing hosting expenses by approximately 30%.", "Established a privacy-focused local Ollama infrastructure and led technical sessions with international clients on architecture, performance and security."]
+      },
+      {
+        "company": "Qligence Ltd",
+        "role": "Software Engineer",
+        "location": "Dhanmondi, Dhaka",
+        "period": "Jan 2025 – Oct 2025",
+        "points": ["Built Laravel, Next.js, React and PHP applications and refactored complex queries to improve database performance by 35%.", "Advised teams on cloud, latency and architecture across Laravel, CakePHP, CodeIgniter and Node.js projects.", "Reduced infrastructure costs by 30–40% through cloud migration and managed production pipelines and maintenance."]
+      },
+      {
+        "company": "Qligence Ltd",
+        "role": "Junior Software Engineer",
+        "location": "Dhanmondi, Dhaka",
+        "period": "Jul 2024 – Dec 2024",
+        "points": ["Contributed to full-stack web applications and maintained reliable deployment and support workflows."]
+      },
+      {
+        "company": "FinvaSoft Ltd",
+        "role": "Software Engineer (Intern)",
+        "location": "Mirpur, Dhaka",
+        "period": "Jan 2024 – Jun 2024",
+        "points": ["Engineered Laravel e-commerce features in a multi-tenant repository with complete tenant isolation.", "Optimized MySQL queries for a 25% speed improvement and managed AWS deployments and client communication."]
+      },
+      {
+        "company": "JONS Steel & Design Associates",
+        "role": "System Engineer & IT Manager",
+        "location": "Adabor, Dhaka",
+        "period": "Nov 2023 – Dec 2023",
+        "points": ["Modernized file sharing with Synology NAS and Windows Server 2019 Active Directory, achieving 99.9% uptime for 12+ employees.", "Developed a WordPress 3D/IFC model viewer, integrated ZKTeCO systems and configured Zoho Mail, IP phones and network security."]
+      },
+      {
+        "company": "JONS Steel & Design Associates",
+        "role": "Web Developer & System Specialist",
+        "location": "Dhaka",
+        "period": "Jul 2022 – Nov 2023",
+        "points": ["Maintained web systems and managed company IT, networks and technical infrastructure."]
+      },
+      {
+        "company": "Global Sources BD",
+        "role": "Web Developer",
+        "location": "Mohammadpur, Dhaka",
+        "period": "Sep 2023 – Oct 2023",
+        "points": ["Built WebGL and OpenStreetMap visualizations for cadastral survey datasets and improved data-processing efficiency by 30%."]
+      },
+      {
+        "company": "Freelance",
+        "role": "Upwork & Fiverr — Web Designer & Developer",
+        "location": "Remote",
+        "period": "Feb 2017 – Sep 2023",
+        "points": ["Delivered 40+ WordPress, WooCommerce and Laravel solutions with over 95% client satisfaction.", "Improved site load times by up to 40%, optimized deployments and maintained 99.9% uptime."]
+      }
+    ]
+  },
+  "education": {
+    "title": "Education",
+    "trainingTitle": "Training & Certifications",
+    "items": [
+      { "degree": "B.Sc. in Computer Science & Engineering", "institution": "Northern College Bangladesh — National University", "year": "2021", "detail": "CGPA: 2.95 / 4" },
+      { "degree": "Higher Secondary Certificate", "institution": "Walinewaz Khan College, Kishoreganj", "year": "2017", "detail": "GPA: 3.25 / 5" },
+      { "degree": "Secondary School Certificate", "institution": "Kuliarchar Govt. (Pilot Model) High School", "year": "2015", "detail": "GPA: 4.28 / 5" }
+    ],
+    "training": ["Cloud Service Management with AWS — BASIS, SEIP (2023)", "MikroTik Certified Network Associate & OLT — ITQ Solutions (2022)", "CCNA — Cisco Certified Network Associate (2022)", "Web Design and Development — LEDP (2017)", "Computer Basic Applications — Papiya Computer Institute (2015)"]
+  },
+  "portfolio": {
+    "title": "Selected Portfolio",
+    "intro": "A selection of public projects. Many commercial projects remain private for security and client confidentiality.",
+    "items": [
+      { "name": "Laravel Multivendor E-commerce", "url": "https://ecommerce.qligence.com/", "type": "Laravel · Features & API" },
+      { "name": "WordPress 3D Renderable Plugin", "url": "https://jonssteel.com/render_3d/", "type": "WordPress · 3D" },
+      { "name": "JONS Steel", "url": "https://jonssteel.com", "type": "WordPress" },
+      { "name": "Fish Mart", "url": "https://fishmart.com.bd", "type": "WordPress" },
+      { "name": "BD1971", "url": "https://bd1971.com", "type": "WordPress" },
+      { "name": "Sami Engineering", "url": "https://samiengineering.com", "type": "WordPress" },
+      { "name": "Python Screenshot Desktop App", "url": "https://www.youtube.com/watch?v=Xq0BwFFWOxQ", "type": "Python · Demo" },
+      { "name": "Laravel Supply Management", "url": "https://www.youtube.com/watch?v=5Nm6X_GSxo8", "type": "Laravel · Demo" },
+      { "name": "Pick and Share Laravel", "url": "https://github.com/asifulmamun/Pick-and-Share-Laravel", "type": "GitHub · University Project" },
+      { "name": "GIS Custom Map Visualization", "url": "https://asifulmamun.github.io/OpenStreatMap-GIS-API/", "type": "GIS · JavaScript" },
+      { "name": "WooCommerce Image Upload", "url": "https://github.com/asifulmamun/ccibu", "type": "WooCommerce · Plugin" },
+      { "name": "PHP & MySQL Result System", "url": "https://github.com/asifulmamun/result_hisbul.com", "type": "PHP · MySQL" },
+      { "name": "PHP & MySQL Blood Bank", "url": "https://github.com/asifulmamun/febbms", "type": "PHP · MySQL" }
+    ]
+  }
 }

@@ -37,7 +37,8 @@ export const localeContent = {
 
 export type PageKey = 'home' | 'about' | 'service' | 'contact';
 export type HomeContent = typeof enHome;
-export type SimplePageContent = typeof enAbout;
+export type AboutContent = typeof enAbout;
+export type SimplePageContent = typeof enContact;
 
 export const pageSlugs = ['', 'about', 'service', 'contact'] as const;
 

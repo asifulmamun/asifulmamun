@@ -1,7 +1,67 @@
 {
   "seo": {
-    "title": "পরিচিতি | আসিফুল মামুন",
-    "description": "আসিফুল মামুন সম্পর্কে জানুন—তিনি দ্রুত ও পরিচ্ছন্ন ওয়েবসাইট তৈরিতে মনোযোগী একজন ওয়েব ডেভেলপার।"
+    "title": "পরিচিতি | আল মামুন - Software Engineer",
+    "description": "আল মামুনের পরিচয়—PHP, Laravel, WordPress এবং cloud software engineering বিষয়ে অভিজ্ঞ একজন সফটওয়্যার প্রকৌশলী।"
   },
-  "title": "আমার পরিচিতি"
+  "title": "আমার পরিচিতি",
+  "profile": {
+    "name": "AL MAMUN",
+    "title": "Software Engineer | PHP | Laravel | Linux | WordPress | AWS",
+    "location": "শেখেরটেক, আদাবর, ঢাকা ১২০৭",
+    "phone": "+880 1721 600 688",
+    "email": "hello@asifulmamun.info.bd",
+    "summary": "PHP, Laravel, WordPress, JavaScript এবং Next.js–এ অভিজ্ঞ ফলাফলনির্ভর Full-Stack Software Engineer। Backend architecture, frontend development, AdTech, custom e-commerce application এবং Linux server administration–এ দক্ষ। জটিল সমস্যা পদ্ধতিগতভাবে বিশ্লেষণ করে মূল কারণ নির্ণয় করে দীর্ঘমেয়াদি ও নিরাপদ সমাধান নির্মাণ করি।"
+  },
+  "skills": {
+    "title": "দক্ষতা",
+    "groups": [
+      { "title": "Backend ও Architecture", "items": ["PHP (OOP)", "Laravel", "WordPress", "WooCommerce", "RESTful APIs", "Node.js", "Python", "System Architecture"] },
+      { "title": "Frontend", "items": ["JavaScript (ES6+)", "Next.js", "React", "Tailwind CSS", "Alpine.js", "SASS", "Bootstrap", "jQuery", "Vite", "Webpack", "WebGL"] },
+      { "title": "AI ও Optimization", "items": ["Local LLM / Ollama", "Prompt Engineering", "Agentic AI APIs", "Cursor AI", "Gemini CLI", "Claude", "ChatGPT", "Token & Cost Optimization"] },
+      { "title": "Cloud ও DevOps", "items": ["AWS", "GCP", "DigitalOcean", "Hetzner", "Docker", "Linux", "Nginx", "Apache", "VPS", "Cloudflare", "CI/CD"] },
+      { "title": "ডেটা ও Tools", "items": ["MySQL", "PostgreSQL", "Redis", "SQL Optimization", "Active Directory", "Network Security", "Git", "ClickUp", "Slack", "Figma"] }
+    ]
+  },
+  "experience": {
+    "title": "কর্ম অভিজ্ঞতা",
+    "items": [
+      { "company": "SEBPO", "role": "Creative Developer", "location": "ধানমন্ডি, ঢাকা", "period": "Oct 2025 – Present", "points": ["Laravel ও Next.js দিয়ে scalable application architecture এবং AdTech feature তৈরি; সব release সময়মতো delivery.", "AWS ও local VPS/intranet environment-এ application deploy করে hosting cost আনুমানিক ৩০% কমিয়েছি.", "Privacy-focused local Ollama infrastructure তৈরি এবং আন্তর্জাতিক ক্লায়েন্টদের architecture, performance ও security বিষয়ে technical session পরিচালনা করেছি."] },
+      { "company": "Qligence Ltd", "role": "Software Engineer", "location": "ধানমন্ডি, ঢাকা", "period": "Jan 2025 – Oct 2025", "points": ["Laravel, Next.js, React ও PHP application নির্মাণ এবং complex query optimize করে database performance ৩৫% উন্নত করেছি.", "Laravel, CakePHP, CodeIgniter ও Node.js প্রকল্পের cloud, latency ও architecture বিষয়ে দলকে পরামর্শ দিয়েছি.", "Cloud migration ও optimized infrastructure-এর মাধ্যমে infrastructure cost ৩০–৪০% কমিয়েছি।"] },
+      { "company": "Qligence Ltd", "role": "Junior Software Engineer", "location": "ধানমন্ডি, ঢাকা", "period": "Jul 2024 – Dec 2024", "points": ["Full-stack web application development এবং deployment-support workflow-এ কাজ করেছি."] },
+      { "company": "FinvaSoft Ltd", "role": "Software Engineer (Intern)", "location": "মিরপুর, ঢাকা", "period": "Jan 2024 – Jun 2024", "points": ["Multi-tenant Laravel repository-তে tenant-isolated e-commerce feature তৈরি করেছি.", "MySQL query optimize করে application speed ২৫% বৃদ্ধি এবং AWS deployment ও client communication পরিচালনা করেছি."] },
+      { "company": "JONS Steel & Design Associates", "role": "System Engineer & IT Manager", "location": "আদাবর, ঢাকা", "period": "Nov 2023 – Dec 2023", "points": ["Synology NAS ও Windows Server 2019 Active Directory দিয়ে file sharing modernize করে ১২+ কর্মীর জন্য ৯৯.৯% uptime অর্জন করেছি.", "WordPress 3D/IFC model viewer, ZKTeCO integration ও Zoho Mail, IP phone, network security setup করেছি."] },
+      { "company": "JONS Steel & Design Associates", "role": "Web Developer & System Specialist", "location": "ঢাকা", "period": "Jul 2022 – Nov 2023", "points": ["Web system maintenance এবং company IT, network ও infrastructure management করেছি."] },
+      { "company": "Global Sources BD", "role": "Web Developer", "location": "Mohammadpur, Dhaka", "period": "Sep 2023 – Oct 2023", "points": ["Cadastral survey dataset-এর জন্য WebGL ও OpenStreetMap visualization তৈরি করেছি; data-processing efficiency ৩০% উন্নত হয়েছে."] },
+      { "company": "Freelance", "role": "Upwork & Fiverr — Web Designer & Developer", "location": "Remote", "period": "Feb 2017 – Sep 2023", "points": ["৪০+ WordPress, WooCommerce ও Laravel solution delivery; ৯৫%+ client satisfaction.", "Site load time ৪০% পর্যন্ত উন্নত, deployment optimize ও ৯৯.৯% uptime বজায় রেখেছি."] }
+    ]
+  },
+  "education": {
+    "title": "শিক্ষা",
+    "trainingTitle": "প্রশিক্ষণ ও সার্টিফিকেশন",
+    "items": [
+      { "degree": "B.Sc. in Computer Science & Engineering", "institution": "Northern College Bangladesh — National University", "year": "2021", "detail": "CGPA: 2.95 / 4" },
+      { "degree": "Higher Secondary Certificate", "institution": "Walinewaz Khan College, Kishoreganj", "year": "2017", "detail": "GPA: 3.25 / 5" },
+      { "degree": "Secondary School Certificate", "institution": "Kuliarchar Govt. (Pilot Model) High School", "year": "2015", "detail": "GPA: 4.28 / 5" }
+    ],
+    "training": ["Cloud Service Management with AWS — BASIS, SEIP (2023)", "MikroTik Certified Network Associate & OLT — ITQ Solutions (2022)", "CCNA — Cisco Certified Network Associate (2022)", "Web Design and Development — LEDP (2017)", "Computer Basic Applications — Papiya Computer Institute (2015)"]
+  },
+  "portfolio": {
+    "title": "Selected Portfolio",
+    "intro": "বাছাইকৃত public project। Security ও client confidentiality-এর কারণে বেশিরভাগ commercial project private রাখা হয়েছে।",
+    "items": [
+      { "name": "Laravel Multivendor E-commerce", "url": "https://ecommerce.qligence.com/", "type": "Laravel · Features & API" },
+      { "name": "WordPress 3D Renderable Plugin", "url": "https://jonssteel.com/render_3d/", "type": "WordPress · 3D" },
+      { "name": "JONS Steel", "url": "https://jonssteel.com", "type": "WordPress" },
+      { "name": "Fish Mart", "url": "https://fishmart.com.bd", "type": "WordPress" },
+      { "name": "BD1971", "url": "https://bd1971.com", "type": "WordPress" },
+      { "name": "Sami Engineering", "url": "https://samiengineering.com", "type": "WordPress" },
+      { "name": "Python Screenshot Desktop App", "url": "https://www.youtube.com/watch?v=Xq0BwFFWOxQ", "type": "Python · Demo" },
+      { "name": "Laravel Supply Management", "url": "https://www.youtube.com/watch?v=5Nm6X_GSxo8", "type": "Laravel · Demo" },
+      { "name": "Pick and Share Laravel", "url": "https://github.com/asifulmamun/Pick-and-Share-Laravel", "type": "GitHub · University Project" },
+      { "name": "GIS Custom Map Visualization", "url": "https://asifulmamun.github.io/OpenStreatMap-GIS-API/", "type": "GIS · JavaScript" },
+      { "name": "WooCommerce Image Upload", "url": "https://github.com/asifulmamun/ccibu", "type": "WooCommerce · Plugin" },
+      { "name": "PHP & MySQL Result System", "url": "https://github.com/asifulmamun/result_hisbul.com", "type": "PHP · MySQL" },
+      { "name": "PHP & MySQL Blood Bank", "url": "https://github.com/asifulmamun/febbms", "type": "PHP · MySQL" }
+    ]
+  }
 }
