@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <HomePage
       content={localeContent.en.home}
-      experiences={localeContent.en.about.experience.items.slice(-4).map(({ company, role, location, period }) => ({ company, role, location, period }))}
+      experiences={localeContent.en.about.experience.items.slice(0, 3).map(({ company, role, location, period }) => ({ company, role, location, period }))}
       locale="en"
     />
   );

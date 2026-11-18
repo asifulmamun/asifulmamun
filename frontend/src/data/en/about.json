@@ -86,9 +86,9 @@
     "title": "Education",
     "trainingTitle": "Training & Certifications",
     "items": [
-      { "degree": "B.Sc. in Computer Science & Engineering", "institution": "Northern College Bangladesh — National University", "year": "2021", "detail": "CGPA: 2.95 / 4" },
-      { "degree": "Higher Secondary Certificate", "institution": "Walinewaz Khan College, Kishoreganj", "year": "2017", "detail": "GPA: 3.25 / 5" },
-      { "degree": "Secondary School Certificate", "institution": "Kuliarchar Govt. (Pilot Model) High School", "year": "2015", "detail": "GPA: 4.28 / 5" }
+      { "degree": "B.Sc. in Computer Science & Engineering", "institution": "Northern College Bangladesh — NU", "year": "2021", "detail": "Actual passing year 2023 due to COVID19" },
+      { "degree": "Higher Secondary Certificate", "institution": "Walinewaz Khan College, Kishoreganj", "year": "2017", "detail": "Science, Dhaka Board" },
+      { "degree": "Secondary School Certificate", "institution": "Kuliarchar Govt. (Pilot Model) High School", "year": "2015", "detail": "Science, Dhaka Board" }
     ],
     "training": ["Cloud Service Management with AWS — BASIS, SEIP (2023)", "MikroTik Certified Network Associate & OLT — ITQ Solutions (2022)", "CCNA — Cisco Certified Network Associate (2022)", "Web Design and Development — LEDP (2017)", "Computer Basic Applications — Papiya Computer Institute (2015)"]
   },
