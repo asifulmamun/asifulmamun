@@ -16,7 +16,7 @@ export default function SiteLayout({
         <meta name="theme-color" content="#ffffff" />
         {/* Shared head scripts/tags go here; use the Metadata API for SEO. */}
       </head>
-      <body className={bodyClassName}>
+      <body className={bodyClassName} suppressHydrationWarning>
         {/* Shared after-body-start markup, such as a noscript fallback, goes here. */}
         <Header />
         {children}
