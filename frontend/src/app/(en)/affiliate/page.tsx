@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import InfoPage from '@/src/components/pages/info-page';
-import { footerPages } from '@/src/data/footer-pages';
+import AffiliatePage from '@/src/components/pages/affiliate-page';
+import content from '@/src/data/en/affiliate.json';
 
-export const metadata: Metadata = { title: `${footerPages.en.affiliate.title} | Al Mamun` };
-export default function Affiliate() { return <InfoPage content={footerPages.en.affiliate} />; }
+export const metadata: Metadata = { title: content.seo.title, description: content.seo.description };
+export default function Affiliate() { return <AffiliatePage content={content} />; }

@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import InfoPage from '@/src/components/pages/info-page';
-import { footerPages } from '@/src/data/footer-pages';
+import AffiliatePage from '@/src/components/pages/affiliate-page';
+import content from '@/src/data/bn/affiliate.json';
 import { getLocalizedStaticParams, isLocale } from '@/src/data/languages';
 
 export const dynamicParams = false;
 export function generateStaticParams() { return getLocalizedStaticParams(); }
-export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> { const { lang } = await params; if (!isLocale(lang) || lang === 'en') notFound(); return { title: `${footerPages[lang].affiliate.title} | Al Mamun` }; }
-export default async function Affiliate({ params }: { params: Promise<{ lang: string }> }) { const { lang } = await params; if (!isLocale(lang) || lang === 'en') notFound(); return <InfoPage content={footerPages[lang].affiliate} />; }
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> { const { lang } = await params; if (!isLocale(lang) || lang === 'en') notFound(); return { title: content.seo.title, description: content.seo.description }; }
+export default async function Affiliate({ params }: { params: Promise<{ lang: string }> }) { const { lang } = await params; if (!isLocale(lang) || lang === 'en') notFound(); return <AffiliatePage content={content} />; }
