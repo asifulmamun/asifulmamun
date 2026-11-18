@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import bannerBG from '@/src/assets/images/asifulmamun-al-mamun.jpg';
+import bannerBG from '@/src/assets/images/asifulmamun-al-mamun.png';
 import SocialIcon from '@/src/components/global/icons';
 
 
@@ -13,7 +13,7 @@ export default function Banner({ content }) {
                     <p className="font-serif text-4xl sm:text-5xl">{content.intro}</p>
                     <h1 className="mt-2 font-serif text-5xl font-semibold sm:text-7xl">{content.name}</h1>
                     <svg className="mt-1 h-3 w-56 text-accent" viewBox="0 0 230 12" fill="none" aria-hidden="true">
-                        <path d="M2 8c14-8 20 4 34-2s20 4 34-2 20 4 34-2 20 4 34-2 20 4 34-2 20 4 34-2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                        <path d="M2 8c14-8 20 4 34-2s20 4 34-2 20 4 34-2 20 4 34-2 20 4 34-2 20 4 34-2 20 4 34-2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                     </svg>
                     <p className="mt-8 max-w-md text-slate-500">{content.description}</p>
 
@@ -43,15 +43,15 @@ export default function Banner({ content }) {
                             <circle cx="170" cy="250" r="165" stroke="rgba(15,23,42,.08)" />
                         </svg>
 
-                        <div className="absolute inset-x-6 bottom-0 top-8 overflow-hidden rounded-t-[40%] border border-dashed border-slate-300 bg-slate-50">
+                        {/* <div className="absolute inset-x-6 bottom-0 top-8 overflow-hidden rounded-t-[40%] border border-dashed border-slate-300 bg-slate-50"> */}
                             <Image
                                 src={bannerBG}
                                 alt="Asiful Mamun"
                                 // fill
                                 // sizes="(min-width: 1024px) 400px, calc(100vw - 6rem)"
-                                className="object-cover"
+                                className="object-cover mix-blend-multiply"
                             />
-                        </div>
+                        {/* </div> */}
 
                         {content.socialLinks.map((social) => (
                             <a
