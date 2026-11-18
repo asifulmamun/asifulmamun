@@ -1,12 +1,11 @@
 import Image from 'next/image';
-import content from '@/src/data/home-en.json';
 import bannerBG from '@/src/assets/images/asifulmamun-al-mamun.jpg';
 import SocialIcon from '@/src/components/global/icons';
 
 
 
 
-export default function banner() {
+export default function banner(content) {
     return (
         <section className="mx-auto max-w-6xl items-center relative min-h-screen">
             <div className="grid min-h-screen grid-cols-1 gap-8 px-6 py-16 lg:grid-cols-2">
