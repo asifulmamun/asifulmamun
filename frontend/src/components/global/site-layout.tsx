@@ -13,6 +13,7 @@ export default function SiteLayout({
   return (
     <html lang={lang} suppressHydrationWarning>
       <head>
+        <meta name="theme-color" content="#ffffff" />
         {/* Shared head scripts/tags go here; use the Metadata API for SEO. */}
       </head>
       <body className={bodyClassName}>

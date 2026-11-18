@@ -15,9 +15,42 @@ import {
 
 const supportedPages = ['', 'about', 'service', 'contact'];
 
+type ThemePreference = 'dark' | 'light';
+
+function readThemePreference(): ThemePreference | null {
+    try {
+        const preference = window.localStorage.getItem('navbar-theme');
+        return preference === 'dark' || preference === 'light' ? preference : null;
+    } catch (error) {
+        if (!(error instanceof DOMException) || error.name !== 'SecurityError') {
+            throw error;
+        }
+
+        console.warn('Theme preference storage is unavailable; using the system preference.');
+        return null;
+    }
+}
+
+function saveThemePreference(preference: ThemePreference) {
+    try {
+        window.localStorage.setItem('navbar-theme', preference);
+    } catch (error) {
+        if (
+            !(error instanceof DOMException)
+            || (error.name !== 'SecurityError' && error.name !== 'QuotaExceededError')
+        ) {
+            throw error;
+        }
+
+        console.warn('Theme changed for this session, but the preference could not be saved.');
+    }
+}
+
 function applyTheme(isDarkMode: boolean) {
     document.documentElement.dataset.theme = isDarkMode ? 'dark' : 'light';
     document.documentElement.style.colorScheme = isDarkMode ? 'dark' : 'light';
+    const themeColor = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
+    if (themeColor) themeColor.content = isDarkMode ? '#020617' : '#ffffff';
 }
 
 export default function Header() {
@@ -42,7 +75,7 @@ export default function Header() {
     const indicatorIndex = hoveredItem ?? Math.max(activeIndex, 0);
 
     useEffect(() => {
-        const savedTheme = window.localStorage.getItem('navbar-theme');
+        const savedTheme = readThemePreference();
 
         if (savedTheme === 'dark' || savedTheme === 'light') {
             const isDarkMode = savedTheme === 'dark';
@@ -57,8 +90,7 @@ export default function Header() {
         applyTheme(isDarkMode);
 
         function followSystemTheme(event: MediaQueryListEvent) {
-            const preference = window.localStorage.getItem('navbar-theme');
-            if (preference !== 'dark' && preference !== 'light') {
+            if (readThemePreference() === null) {
                 setDarkMode(event.matches);
                 applyTheme(event.matches);
             }
@@ -69,10 +101,10 @@ export default function Header() {
     }, []);
 
     function toggleTheme() {
-        const next = !darkMode;
-        setDarkMode(next);
-        window.localStorage.setItem('navbar-theme', next ? 'dark' : 'light');
+        const next = document.documentElement.dataset.theme !== 'dark';
         applyTheme(next);
+        setDarkMode(next);
+        saveThemePreference(next ? 'dark' : 'light');
     }
 
     useEffect(() => {
@@ -165,8 +197,9 @@ export default function Header() {
                         type="button"
                         onClick={toggleTheme}
                         aria-label={`Switch to ${darkMode ? 'light' : 'dark'} mode`}
+                        aria-pressed={darkMode}
                         title={`Switch to ${darkMode ? 'light' : 'dark'} mode`}
-                        className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-colors ${darkMode ? 'border-white/15 bg-white/[0.08] text-white hover:bg-white/[0.16]' : 'border-white/80 bg-white/65 text-slate-700 hover:bg-white'}`}
+                        className={`flex h-11 w-11 shrink-0 touch-manipulation items-center justify-center rounded-full border transition-colors ${darkMode ? 'border-white/15 bg-white/[0.08] text-white hover:bg-white/[0.16]' : 'border-white/80 bg-white/65 text-slate-700 hover:bg-white'}`}
                     >
                         {darkMode ? <Sun aria-hidden="true" size={18} /> : <Moon aria-hidden="true" size={18} />}
                     </button>

@@ -135,6 +135,12 @@ Adding a page requires source updates as well as JSON:
 - `out/` and `.next/` are generated artifacts; do not edit them manually.
 - If the development server returns a stale route after adding or moving route
   files, stop and restart `pnpm dev` so Next rebuilds its route manifest.
+- To test the development site from a phone over the LAN, add the PC's LAN
+  hostname to `allowedDevOrigins` in `next.config.ts` (without the scheme or
+  port), then restart `pnpm dev`. The current development network uses
+  `10.232.127.196`. Without this, Next.js can block dev assets requested
+  through the LAN IP, leaving the page visible but its client-side controls
+  inactive. This setting does not affect the static production export.
 
 ## SEO metadata
 
@@ -204,6 +210,9 @@ The theme toggle is in `src/components/global/header.tsx`.
 - `navbar-theme` in `localStorage` stores `dark` or `light`; if unset, the
   browser's system color preference is used.
 - The selected theme is reflected as `data-theme` on the root `<html>` element.
+- The theme toggle updates the mobile browser chrome through the shared
+  `theme-color` meta tag. If browser storage is blocked, the theme still changes
+  for the current page and a warning explains that the choice cannot persist.
 - `src/app/globals.css` defines Tailwind's `dark:` variant against that
   attribute.
 - Layout, home/banner, and other page surfaces use `dark:` classes. Add
