@@ -16,6 +16,11 @@ const siteUrl = new URL(
   defaultSiteUrl,
 ).origin;
 
+const baseOpenGraph = {
+  siteName: 'Asiful Mamun',
+  type: 'website' as const,
+};
+
 export const siteMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
@@ -23,10 +28,7 @@ export const siteMetadata: Metadata = {
     template: '%s | Asiful Mamun',
   },
   description: 'Asiful Mamun is a Software Engineer building fast, clean websites.',
-  openGraph: {
-    siteName: 'Asiful Mamun',
-    type: 'website',
-  },
+  openGraph: baseOpenGraph,
 };
 
 export function createPageMetadata(locale: Locale, page: PageKey): Metadata {
@@ -56,12 +58,11 @@ export function createPageMetadata(locale: Locale, page: PageKey): Metadata {
       languages: alternateLanguages,
     },
     openGraph: {
+      ...baseOpenGraph,
       title: pageData.seo.title,
       description: pageData.seo.description,
       url: pagePath,
-      siteName: 'Asiful Mamun',
       locale: languages[locale].openGraphLocale,
-      type: 'website',
     },
   };
 }

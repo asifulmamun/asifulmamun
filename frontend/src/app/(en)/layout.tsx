@@ -1,4 +1,6 @@
-import Header from '@/src/components/global/header';
+import SiteShell, {
+  siteBodyClassName,
+} from '@/src/components/global/site-shell';
 import { siteMetadata } from '@/src/data/site-metadata';
 import '../globals.css';
 
@@ -11,9 +13,8 @@ export default function EnglishLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="bg-white text-slate-900 antialiased overflow-x-hidden selection:bg-accent selection:text-white dark:bg-slate-950 dark:text-slate-100">
-        <Header />
-        {children}
+      <body className={siteBodyClassName}>
+        <SiteShell>{children}</SiteShell>
       </body>
     </html>
   );

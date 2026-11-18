@@ -30,6 +30,12 @@ English route files live in `src/app/(en)/`. Non-default locale routes live in
 `src/app/[lang]/`; each locale uses the same page slugs. The localized layout
 sets the document's `html lang` attribute from the locale registry.
 
+The two root layouts are separate only because each must set a different
+`html lang`. They both use `src/components/global/site-shell.tsx` for the
+shared header, body classes, and the insertion point for site-wide UI or
+scripts. Keep shared metadata configuration in `src/data/site-metadata.ts`;
+do not duplicate common markup or defaults between the layouts.
+
 The supported locales and their labels are registered in
 `src/data/languages.ts`. `defaultLocale` is `en`. The localized layout and
 localized pages use `generateStaticParams()` to enumerate every registered
@@ -145,6 +151,9 @@ Page SEO values are stored beside the page content in each locale's JSON:
 
 - The site `metadataBase`, using `NEXT_PUBLIC_BASE_URL` or the production
   default `https://asifulmamun.info.bd`.
+- Shared Open Graph defaults in `baseOpenGraph`. Add common Open Graph values,
+  such as `images: ['/og-image.png']`, here so the root and page metadata
+  reuse them. Put metadata images in `public/` so crawlers can fetch them.
 - `createPageMetadata(locale, page)`, which reads the page's JSON SEO fields
   and builds the absolute title, description, canonical URL, Open Graph data,
   and `hreflang` alternates (including `x-default`).
@@ -152,6 +161,11 @@ Page SEO values are stored beside the page content in each locale's JSON:
 
 When deploying to another domain, set `NEXT_PUBLIC_BASE_URL` to its absolute
 origin, for example `https://example.com`.
+
+Add site-wide Google verification metadata to `siteMetadata` in this same
+module. Add configured site-wide client scripts or pixels once through the
+shared `SiteShell`; do not paste them into both root layouts. Use the actual
+provider ID/configuration and follow any required consent policy.
 
 ## Sitemap, robots, and LLM information
 
