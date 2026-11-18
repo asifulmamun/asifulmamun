@@ -33,5 +33,11 @@ export default async function LocalizedHome({
 }) {
   const { lang } = await params;
   if (!isLocale(lang) || lang === 'en') notFound();
-  return <HomePage content={localeContent[lang].home} />;
+  return (
+    <HomePage
+      content={localeContent[lang].home}
+      experiences={localeContent[lang].about.experience.items.slice(-2).map(({ company, role, location, period }) => ({ company, role, location, period }))}
+      locale={lang}
+    />
+  );
 }

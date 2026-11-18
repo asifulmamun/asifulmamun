@@ -27,7 +27,7 @@
       {
         "company": "SEBPO",
         "role": "Creative Developer",
-        "location": "Dhanmondi, Dhaka",
+        "location": "Karwan Bazar, Dhaka",
         "period": "Oct 2025 – Present",
         "points": ["Architect scalable Laravel and Next.js applications and deliver AdTech features across client projects with 100% on-time releases.", "Deploy applications across AWS and local VPS/intranet environments, reducing hosting expenses by approximately 30%.", "Established a privacy-focused local Ollama infrastructure and led technical sessions with international clients on architecture, performance and security."]
       },
@@ -54,7 +54,7 @@
       },
       {
         "company": "JONS Steel & Design Associates",
-        "role": "System Engineer & IT Manager",
+        "role": "System Engineer & IT Admin",
         "location": "Adabor, Dhaka",
         "period": "Nov 2023 – Dec 2023",
         "points": ["Modernized file sharing with Synology NAS and Windows Server 2019 Active Directory, achieving 99.9% uptime for 12+ employees.", "Developed a WordPress 3D/IFC model viewer, integrated ZKTeCO systems and configured Zoho Mail, IP phones and network security."]

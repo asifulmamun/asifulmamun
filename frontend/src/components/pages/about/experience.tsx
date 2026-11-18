@@ -2,7 +2,7 @@ export type Experience = { company: string; role: string; location: string; peri
 
 export default function Experience({ title, items }: { title: string; items: Experience[] }) {
   return (
-    <section>
+    <section id="experience">
       <h2 className="font-serif text-4xl font-semibold sm:text-5xl">{title}</h2>
       <div className="mt-8 border-l border-slate-200 dark:border-white/10">
         {items.map((item) => (

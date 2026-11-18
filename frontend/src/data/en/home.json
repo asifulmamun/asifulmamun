@@ -14,6 +14,10 @@
     "label": "Watch Video",
     "href": "https://www.youtube.com/watch?v=example"
   },
+  "experienceTimeline": {
+    "title": "Recent Experience",
+    "moreLabel": "More Experience"
+  },
   "socialLinks": [
     { "label": "LinkedIn", "href": "https://linkedin.com/in/asifulmamun", "icon": "linkedin", "x": "27%", "y": "8%" },
     { "label": "Facebook", "href": "https://facebook.com/asifulmamun.info.bd", "icon": "facebook", "x": "6%", "y": "18%" },
