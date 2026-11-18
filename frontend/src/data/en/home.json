@@ -19,6 +19,6 @@
     { "label": "Facebook", "href": "https://facebook.com/asifulmamun.info.bd", "icon": "facebook", "x": "6%", "y": "18%" },
     { "label": "WhatsApp", "href": "https://wa.me/8801721600688?t=Hello from asifulmamun.info.bd", "icon": "whatsapp", "x": "83%", "y": "22%" },
     { "label": "Phone", "href": "tel:+8801721600688", "icon": "phone", "x": "94%", "y": "38%" },
-    { "label": "Github", "href": "https://github.com/asifulmamun", "icon": "github", "x": "3%", "y": "78%" }
+    { "label": "Github", "href": "https://github.com/asifulmamun", "icon": "github", "x": "95%", "y": "60%" }
   ]
 }
