@@ -3,8 +3,8 @@
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
-	--color-base: #252836;
-	--color-accent: #3b82f6;
+	--color-base: #20985c;
+	--color-accent: #e65a4f;
 	--font-serif: "Cormorant Garamond", serif;
 	--font-sans: "Poppins", sans-serif;
 }

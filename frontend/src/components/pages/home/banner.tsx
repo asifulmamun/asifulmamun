@@ -21,7 +21,7 @@ export default function Banner({ content }) {
                         <a href={content.resume.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-7 py-4 text-sm transition hover:border-accent hover:bg-accent hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent dark:border-white/20">
                             {content.resume.label}
                             <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                                <path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16" />
+                                <path d="m5 7 5 5-5 5m7-10 5 5-5 5" />
                             </svg>
                         </a>
                     </div>
