@@ -1,7 +1,42 @@
 {
   "seo": {
     "title": "যোগাযোগ | আসিফুল মামুন",
-    "description": "ওয়েব ডেভেলপমেন্ট প্রকল্প বা ওয়েবসাইট নিয়ে কথা বলতে আসিফুল মামুনের সাথে যোগাযোগ করুন।"
+    "description": "Software engineering, Laravel, WordPress, cloud এবং cost optimization consultancy-এর জন্য সরাসরি WhatsApp বা ইমেল করুন।"
   },
-  "title": "যোগাযোগ"
+  "title": "যোগাযোগ",
+  "eyebrow": "সরাসরি পরামর্শ",
+  "heading": "চলুন আপনার পরবর্তী প্রকল্প নিয়ে আলোচনা করি",
+  "intro": "Software, web, cloud ও cost optimization-এর উপযুক্ত সুযোগের জন্য প্রাথমিক consultation বিনামূল্যে প্রদান করা হয়। দ্রুত যোগাযোগের জন্য WhatsApp বা বিস্তারিত business ও technical requirements-এর জন্য ইমেল ব্যবহার করুন।",
+  "profile": {
+    "name": "আল মামুন",
+    "role": "সফটওয়্যার ইঞ্জিনিয়ার",
+    "location": "আদাবর, ঢাকা ১২০৭, বাংলাদেশ"
+  },
+  "phone": "+880 1721 600 688",
+  "phoneDisplay": "(880) 1721 600 688",
+  "phoneHref": "tel:+8801721600688",
+  "email": "hello@asifulmamun.info.bd",
+  "whatsapp": "https://wa.me/8801721600688?text=Hello%20Al%20Mamun%2C%20I%20would%20like%20to%20discuss%20a%20project.",
+  "whatsappLabel": "WhatsApp-এ মেসেজ করুন",
+  "emailLabel": "ইমেল পাঠান",
+  "consultationLabel": "বিনামূল্যে প্রাথমিক পরামর্শ",
+  "scheduleTitle": "যোগাযোগের সময়",
+  "scheduleTimezoneTitle": "বাংলাদেশ সময়",
+  "deviceTimezoneTitle": "আপনার লোকাল সময়",
+  "availableNow": "এখন উপলব্ধ",
+  "outsideHours": "বর্তমানে অনুপলব্ধ",
+  "whatsappWindow": "নির্ধারিত সময়ে WhatsApp-এ যোগাযোগ করা যাবে",
+  "emailAlways": "Business inquiry এবং cost optimization consultation-এর জন্য ইমেল সবসময় open",
+  "scheduleIntro": "সময় বাংলাদেশ Standard Time (UTC+06:00)-এ প্রদর্শিত। নিচে আপনার device-এর local time স্বয়ংক্রিয়ভাবে দেখানো হবে।",
+  "schedule": {
+    "timezone": "Asia/Dhaka",
+    "timezoneLabel": "BDT · UTC+06:00",
+    "weekend": [
+      { "start": "11:00", "end": "13:00", "channel": "whatsapp" },
+      { "start": "16:00", "end": "21:00", "channel": "whatsapp" }
+    ],
+    "weekday": [
+      { "start": "10:00", "end": "12:00", "channel": "whatsapp" }
+    ]
+  }
 }

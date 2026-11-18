@@ -1,7 +1,42 @@
 {
   "seo": {
     "title": "Contact | Asiful Mamun",
-    "description": "Contact Asiful Mamun to discuss web development projects and website needs."
+    "description": "Contact Al Mamun directly on WhatsApp or email for software engineering, Laravel, WordPress, cloud and cost optimization consulting."
   },
-  "title": "Contact"
+  "title": "Contact",
+  "eyebrow": "Direct consultation",
+  "heading": "Let’s discuss your next project",
+  "intro": "I offer a free initial consultation for suitable software, web, cloud and cost optimization opportunities. Choose WhatsApp for a quick conversation or email for detailed business and technical requirements.",
+  "profile": {
+    "name": "AL MAMUN",
+    "role": "Software Engineer",
+    "location": "Adabor, Dhaka 1207, Bangladesh"
+  },
+  "phone": "+880 1721 600 688",
+  "phoneDisplay": "(880) 1721 600 688",
+  "phoneHref": "tel:+8801721600688",
+  "email": "hello@asifulmamun.info.bd",
+  "whatsapp": "https://wa.me/8801721600688?text=Hello%20Al%20Mamun%2C%20I%20would%20like%20to%20discuss%20a%20project.",
+  "whatsappLabel": "Message on WhatsApp",
+  "emailLabel": "Send an email",
+  "consultationLabel": "Free initial consultation",
+  "scheduleTitle": "Availability",
+  "scheduleTimezoneTitle": "Bangladesh time",
+  "deviceTimezoneTitle": "Your local time",
+  "availableNow": "Available now",
+  "outsideHours": "Currently unavailable",
+  "whatsappWindow": "WhatsApp is available during the scheduled time",
+  "emailAlways": "Email is always open for business inquiries and cost optimization consultations",
+  "scheduleIntro": "Times are shown in Bangladesh Standard Time (UTC+06:00). Your device time is shown automatically below.",
+  "schedule": {
+    "timezone": "Asia/Dhaka",
+    "timezoneLabel": "BDT · UTC+06:00",
+    "weekend": [
+      { "start": "11:00", "end": "13:00", "channel": "whatsapp" },
+      { "start": "16:00", "end": "21:00", "channel": "whatsapp" }
+    ],
+    "weekday": [
+      { "start": "10:00", "end": "12:00", "channel": "whatsapp" }
+    ]
+  }
 }
