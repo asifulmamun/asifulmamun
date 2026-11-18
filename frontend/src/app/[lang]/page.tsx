@@ -36,7 +36,7 @@ export default async function LocalizedHome({
   return (
     <HomePage
       content={localeContent[lang].home}
-      experiences={localeContent[lang].about.experience.items.slice(0, 3).map(({ company, role, location, period }) => ({ company, role, location, period }))}
+      experiences={localeContent[lang].about.experience.items.slice(0, 4).map(({ company, role, location, period }) => ({ company, role, location, period }))}
       locale={lang}
     />
   );

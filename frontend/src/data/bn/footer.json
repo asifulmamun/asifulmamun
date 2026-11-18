@@ -1,0 +1,17 @@
+{
+  "name": "আল মামুন",
+  "title": "সফটওয়্যার ইঞ্জিনিয়ার",
+  "summary": "স্কেলেবল সফটওয়্যার, আধুনিক ওয়েব অভিজ্ঞতা ও সাশ্রয়ী cloud system তৈরি করছি।",
+  "location": "শেখেরটেক, আদাবর, ঢাকা ১২০৭",
+  "phone": "+880 1721 600 688",
+  "email": "hello@asifulmamun.info.bd",
+  "copyright": "সর্বস্বত্ব সংরক্ষিত",
+  "builtWith": "Next.js দিয়ে নির্মিত",
+  "socialLinks": [
+    { "label": "LinkedIn", "href": "https://linkedin.com/in/asifulmamun", "icon": "linkedin" },
+    { "label": "Facebook", "href": "https://facebook.com/asifulmamun.info.bd", "icon": "facebook" },
+    { "label": "GitHub", "href": "https://github.com/asifulmamun", "icon": "github" },
+    { "label": "WhatsApp", "href": "https://wa.me/8801721600688", "icon": "whatsapp" },
+    { "label": "Phone", "href": "tel:+8801721600688", "icon": "phone" }
+  ]
+}

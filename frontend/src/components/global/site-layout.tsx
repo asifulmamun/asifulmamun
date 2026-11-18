@@ -1,4 +1,5 @@
 import Header from '@/src/components/global/header';
+import Footer from '@/src/components/global/footer';
 
 const bodyClassName =
   'bg-white text-slate-900 antialiased overflow-x-hidden selection:bg-accent selection:text-white dark:bg-slate-950 dark:text-slate-100';
@@ -20,6 +21,7 @@ export default function SiteLayout({
         {/* Shared after-body-start markup, such as a noscript fallback, goes here. */}
         <Header />
         {children}
+        <Footer lang={lang} />
         {/* Shared footer scripts go here. */}
       </body>
     </html>
