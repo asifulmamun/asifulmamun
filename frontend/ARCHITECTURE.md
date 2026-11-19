@@ -26,6 +26,10 @@ a Next.js route group, so its name does not appear in URLs.
 | Services | `/service` | `/bn/service` |
 | Contact | `/contact` | `/bn/contact` |
 
+The services page remains named Services at `/service` and `/bn/service`; its
+navigation label is “Pricing” in English and “প্রাইসিং” in Bengali. Keep the
+navigation wording separate from the page title and route slug.
+
 English route files live in `src/app/(en)/`. Non-default locale routes live in
 `src/app/[lang]/`; each locale uses the same page slugs. The localized layout
 sets the document's `html lang` attribute from the locale registry.
@@ -69,6 +73,7 @@ Each locale has the same JSON file structure:
 
 ```text
 src/data/
+  services.json
   en/
     common.json
     home.json
@@ -76,6 +81,7 @@ src/data/
     service.json
     contact.json
   bn/
+    services.json
     common.json
     home.json
     about.json
@@ -86,6 +92,9 @@ src/data/
 - `common.json` contains shared navigation labels and header copy.
 - Each page JSON contains that page's text and a `seo` object with `title` and
   `description`.
+- The Services page imports its English service data directly from
+  `src/data/services.json` in its Server Component and its Bengali translation
+  from `src/data/bn/services.json`. Both routes keep using the `service` slug.
 - The home JSON also contains the banner's intro, buttons, and social links.
 
 `src/data/common-content.ts` imports common labels for the header.
@@ -215,6 +224,9 @@ with the actual provider configuration and any required consent handling.
 
 The theme toggle is in `src/components/global/header.tsx`.
 
+- Shared visual colors are defined as `--color-base`, `--color-accent`, and
+  `--color-optional` in `src/app/globals.css`. Prefer these tokens for new UI
+  and provide matching `dark:` styles.
 - `navbar-theme` in `localStorage` stores `dark` or `light`; if unset, the
   browser's system color preference is used.
 - The selected theme is reflected as `data-theme` on the root `<html>` element.

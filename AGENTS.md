@@ -36,6 +36,9 @@ other coding agents:
 - Keep changes in the requested project and preserve unrelated work.
 - Read the frontend architecture before changing routes, locale data, metadata,
   static-export behavior, or shared layout/document structure.
+- Preserve the services page route `/service` (and `/bn/service`) and its
+  Services identity. “Pricing” is the navigation label only; do not rename the
+  page or route to Pricing.
 - When a change materially changes architecture, shared application behavior,
   or a workflow other agents rely on, update the relevant architecture and
   agent guidance in the same change. Do this proactively; do not wait for the

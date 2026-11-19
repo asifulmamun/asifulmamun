@@ -6,6 +6,8 @@
 - The active Next.js application is in `frontend/`
 - Follow the repository map in [`AGENTS.md`](../AGENTS.md). For frontend work,
   follow [`frontend/AGENTS.md`](../frontend/AGENTS.md).
+- Keep the Services page at `/service` (and `/bn/service`); “Pricing” is its
+  navigation label only, not a page or route rename.
 - Read [`frontend/ARCHITECTURE.md`](../frontend/ARCHITECTURE.md) only for
   tasks involving routes, SSG/static export, localization, page data, SEO,
   sitemap/robots/llms.txt, theme behavior, deployment, or adding a page or

@@ -5,7 +5,6 @@ import {
   getLocalizedStaticParams,
   isLocale,
 } from '@/src/data/languages';
-import { localeContent } from '@/src/data/locale-content';
 import { createPageMetadata } from '@/src/data/site-metadata';
 
 export const dynamicParams = false;
@@ -33,5 +32,5 @@ export default async function LocalizedService({
 }) {
   const { lang } = await params;
   if (!isLocale(lang) || lang === 'en') notFound();
-  return <ServicePage content={localeContent[lang].service} />;
+  return <ServicePage lang={lang} />;
 }

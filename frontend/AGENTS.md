@@ -22,6 +22,12 @@ an isolated UI or copy change, inspect only the relevant source files.
 - Add every page's content and SEO data for every supported language.
 - Keep `src/data/languages.ts`, `src/data/common-content.ts`, and
   `src/data/locale-content.ts` consistent when registering a locale.
+- Keep the services page at `/service` (and `/bn/service`) with its page
+  identity as Services. The navigation label is “Pricing”; do not rename the
+  route or page to Pricing. Service details live in `src/data/services.json`
+  with their Bengali copy in `src/data/bn/services.json`.
+- Reuse the `--color-base`, `--color-accent`, and `--color-optional` design
+  tokens from `src/app/globals.css` and provide matching dark-theme styles.
 - Put shared `<html>`, `<head>`, `<body>`, header, and common script insertion
   points in `src/components/global/site-layout.tsx`; do not duplicate them in
   both root layouts.
