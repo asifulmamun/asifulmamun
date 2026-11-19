@@ -124,7 +124,7 @@ export default function Header() {
     const muted = darkMode ? 'text-[#9aa4b2]' : 'text-slate-500';
 
     return (
-        <header className="sticky top-0 z-50 px-4 pt-5 sm:px-6 sm:pt-8">
+        <header className="sticky top-[-20px] z-50 px-4 pt-5 sm:top-[-32px] sm:px-6 sm:pt-8">
             <nav
                 aria-label="Main navigation"
                 className={`relative mx-auto flex h-[72px] w-full max-w-[1200px] items-center justify-between rounded-[24px] border px-3 backdrop-blur-[30px] transition-colors duration-300 sm:h-[78px] sm:rounded-[30px] sm:px-[18px] ${glass}`}
@@ -177,7 +177,7 @@ export default function Header() {
                     </select>
                     <Link
                         href={getLocalePath(currentLocale, 'contact')}
-                        className={`hidden h-[50px] items-center gap-2 rounded-[14px] border px-5 text-sm font-medium backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 sm:inline-flex ${darkMode ? 'border-white/15 bg-white/[0.08] text-white hover:bg-white/[0.15]' : 'border-white/80 bg-white/65 text-slate-800 hover:bg-white'}`}
+                        className={`hidden h-[50px] items-center gap-2 rounded-[14px] border px-5 text-sm font-medium backdrop-blur-xl transition duration-300 hover:-translate-y-0.5 sm:inline-flex ${darkMode ? 'border-white/15 bg-white/[0.08] text-accent hover:bg-white/[0.15]' : 'border-white/80 bg-white/65 text-accent hover:bg-white'}`}
                     >
                         {navigationLabels.talk} <ArrowUpRight aria-hidden="true" size={16} />
                     </Link>

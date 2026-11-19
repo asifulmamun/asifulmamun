@@ -227,6 +227,8 @@ with the actual provider configuration and any required consent handling.
 
 The theme toggle is in `src/components/global/header.tsx`.
 
+- The shared header keeps its initial top spacing and sticks to the viewport
+  with the navigation aligned to the top edge while scrolling.
 - Shared visual colors are defined as `--color-base`, `--color-accent`, and
   `--color-optional` in `src/app/globals.css`. Prefer these tokens for new UI
   and provide matching `dark:` styles.
