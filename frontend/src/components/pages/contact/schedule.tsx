@@ -82,6 +82,47 @@ function formatScheduleTime(date: Date, timezone: string, locale: string) {
   }).format(date);
 }
 
+function isValidTimezone(timezone: string) {
+  if (!timezone) return false;
+  try {
+    new Intl.DateTimeFormat('en-US', { timeZone: timezone });
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+async function detectIpTimezone() {
+  const providers = [
+    {
+      url: 'https://get.geojs.io/v1/ip/geo.json',
+      timezone: (data: Record<string, unknown>) => data.timezone,
+    },
+    {
+      url: 'https://ipapi.co/json/',
+      timezone: (data: Record<string, unknown>) => data.timezone,
+    },
+  ];
+
+  for (const provider of providers) {
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 4_000);
+    try {
+      const response = await fetch(provider.url, { signal: controller.signal });
+      if (!response.ok) continue;
+      const data = await response.json() as Record<string, unknown>;
+      const timezone = provider.timezone(data);
+      if (typeof timezone === 'string' && isValidTimezone(timezone)) return timezone;
+    } catch {
+      // Try the next provider, then fall back to the browser timezone.
+    } finally {
+      window.clearTimeout(timeout);
+    }
+  }
+
+  return null;
+}
+
 function zonedDateTimeToInstant(parts: DateParts, hour: number, minute: number, timezone: string) {
   const targetAsUtc = Date.UTC(parts.year, parts.month - 1, parts.day, hour, minute);
   let timestamp = targetAsUtc;
@@ -138,10 +179,20 @@ export default function Schedule(props: ScheduleProps) {
   const [deviceTimezone, setDeviceTimezone] = useState<string | null>(null);
 
   useEffect(() => {
-    setDeviceTimezone(Intl.DateTimeFormat().resolvedOptions().timeZone || 'Local timezone');
+    const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Local timezone';
+    setDeviceTimezone(browserTimezone);
     setNow(new Date());
     const timer = window.setInterval(() => setNow(new Date()), 15_000);
-    return () => window.clearInterval(timer);
+
+    let active = true;
+    void detectIpTimezone().then((ipTimezone) => {
+      if (active && ipTimezone) setDeviceTimezone(ipTimezone);
+    });
+
+    return () => {
+      active = false;
+      window.clearInterval(timer);
+    };
   }, []);
 
   const currentDhakaTime = now ? dateParts(now, props.content.timezone) : null;
