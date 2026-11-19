@@ -1,11 +1,56 @@
 {
+  "heroEyebrow": "PRICING BUILT AROUND YOU",
+  "heroTitle": "Dynamic Pricing. Built Around Your Business.",
+  "heroDescription": "Every business has unique needs and bottlenecks—so there is no fixed, one-size-fits-all package. Pricing is 100% dynamic and based on your exact problem.",
+  "consultationTitle": "Free Initial Consultation",
+  "consultationDescription": "Tell me about your business goals and bottlenecks. We’ll discuss the right next step—100% free, with no commitment.",
+  "consultationLabel": "Book a Free Consultation",
+  "timelineTitle": "After the free consultation, we choose the exact path your business needs.",
+  "timelineSubtitle": "No preset packages—the right engagement depends on your team's needs, capabilities, and real bottlenecks.",
+  "timeline": [
+    {
+      "step": "01",
+      "title": "Supervise & Consult (Client Representative)",
+      "description": "Already have developers or an agency? I work on your company's behalf to guide architecture, monitor progress, and verify code quality—so there are no shortcuts."
+    },
+    {
+      "step": "02",
+      "title": "Optimize Costs & Bottlenecks",
+      "description": "I audit existing systems to cut cloud and hosting expenses by 30–40%, move static company sites to ultra-fast free hosting, and fix speed or load bottlenecks."
+    },
+    {
+      "step": "03",
+      "title": "Build, Refactor & AI Integration",
+      "description": "Need hands-on engineering? I build production-grade e-commerce and web systems, refactor fragile vibe-coded apps, and integrate practical Agentic AI and automation."
+    }
+  ],
   "sectionTitle": "Services & Solutions",
-  "sectionSubtitle": "Tailored engineering, cost optimization, and independent technical oversight for e-commerce and growing companies.",
+  "sectionSubtitle": "Choose the hands-on engineering, cost optimization, or independent technical oversight that solves your business bottleneck.",
   "services": [
+    {
+      "id": "technical-supervision",
+      "title": "Independent Technical Consulting & Supervision",
+      "badge": "Client Representative",
+      "featured": false,
+      "businessFocus": "Already hired an agency or developer? Like a civil site engineer, I work on your behalf—auditing architecture, monitoring progress, and verifying code quality so you get honest delivery with zero shortcuts.",
+      "deliverables": [
+        "Architecture review & honest tech stack roadmap",
+        "Ongoing developer/agency code & progress monitoring",
+        "Clear, jargon-free quality reports for business owners"
+      ],
+      "techStack": [
+        "Architecture Audit",
+        "Code Review",
+        "Cost Analysis",
+        "Deployment Security",
+        "Performance QA"
+      ]
+    },
     {
       "id": "cloud-cost-optimization",
       "title": "Cloud Cost Optimization & Ultra-Fast Hosting",
       "badge": "Save 30–40%",
+      "featured": false,
       "businessFocus": "Stop overpaying for bloated cloud servers. I audit your current infrastructure, migrate heavy setups to lean VPS/cloud architectures, and move company static sites to zero-cost global hosting with 99.9% uptime.",
       "deliverables": [
         "30–40% reduction in monthly AWS/cloud bills",
@@ -23,29 +68,10 @@
       ]
     },
     {
-      "id": "ecommerce-web-solutions",
-      "title": "Production-Grade E-Commerce & Web Apps",
-      "badge": "High Speed",
-      "businessFocus": "Slow websites kill sales. I build and optimize scalable e-commerce stores and custom business applications engineered for fast checkout, smooth traffic handling, and strong SEO performance.",
-      "deliverables": [
-        "Custom e-commerce & multi-vendor platforms",
-        "Database & query tuning (up to 35% faster load times)",
-        "SEO-friendly architecture and zero-downtime deployments"
-      ],
-      "techStack": [
-        "Laravel",
-        "Next.js",
-        "React",
-        "PHP",
-        "WooCommerce",
-        "MySQL",
-        "PostgreSQL"
-      ]
-    },
-    {
       "id": "vibe-code-refactoring",
-      "title": "Vibe-Coded App Refactoring & Bug Fixing",
-      "badge": "Production Ready",
+      "title": "Vibe-Code Resolver & Refactoring",
+      "badge": "Vibe-Code Resolver",
+      "featured": true,
       "businessFocus": "Built a prototype with AI tools that is now breaking or insecure? I audit, debug, and refactor fragile AI/vibe-coded apps into clean, secure, and maintainable production software.",
       "deliverables": [
         "Root-cause debugging for complex, recurring bugs",
@@ -63,8 +89,9 @@
     },
     {
       "id": "ai-integration-automation",
-      "title": "Practical AI Integration & Private LLMs",
-      "badge": "Privacy First",
+      "title": "Agentic AI & Business Automation",
+      "badge": "Business Automation",
+      "featured": true,
       "businessFocus": "Automate repetitive business workflows without leaking sensitive company data. I integrate Agentic AI tools and set up private, local LLM systems that cut external API costs.",
       "deliverables": [
         "Business workflow automation (e.g., WhatsApp & support bots)",
@@ -81,27 +108,31 @@
       ]
     },
     {
-      "id": "technical-supervision",
-      "title": "Independent Technical Consulting & Supervision",
-      "badge": "Client Representative",
-      "businessFocus": "Already hired an agency or developer? Like a civil site engineer, I work on your behalf—auditing architecture, monitoring progress, and verifying code quality so you get honest delivery with zero shortcuts.",
+      "id": "ecommerce-web-solutions",
+      "title": "Production-Grade E-Commerce & Custom Development",
+      "badge": "High Speed",
+      "featured": false,
+      "businessFocus": "Slow websites kill sales. I build and optimize scalable e-commerce stores and custom business applications engineered for fast checkout, smooth traffic handling, and strong SEO performance.",
       "deliverables": [
-        "Architecture review & honest tech stack roadmap",
-        "Ongoing developer/agency code & progress monitoring",
-        "Clear, jargon-free quality reports for business owners"
+        "Custom e-commerce & multi-vendor platforms",
+        "Database & query tuning (up to 35% faster load times)",
+        "SEO-friendly architecture and zero-downtime deployments"
       ],
       "techStack": [
-        "Architecture Audit",
-        "Code Review",
-        "Cost Analysis",
-        "Deployment Security",
-        "Performance QA"
+        "Laravel",
+        "Next.js",
+        "React",
+        "PHP",
+        "WooCommerce",
+        "MySQL",
+        "PostgreSQL"
       ]
     },
     {
       "id": "it-network-infrastructure",
       "title": "Office IT, Network & Business Systems",
       "badge": "Enterprise Setup",
+      "featured": false,
       "businessFocus": "Move away from messy manual workflows to a secure, structured company IT setup—covering office networks, centralized file access, business emails, and attendance/IoT integration.",
       "deliverables": [
         "Centralized file servers, VPN, and Active Directory setup",
@@ -118,21 +149,7 @@
       ]
     }
   ],
-  "engagementModel": [
-    {
-      "step": "01",
-      "title": "Free Initial Consultation",
-      "description": "We discuss your business bottleneck and goals—100% free, no commitment."
-    },
-    {
-      "step": "02",
-      "title": "Deep Audit & Roadmap (Paid Consulting)",
-      "description": "Receive a clear optimization, hosting, and execution plan—even if another team builds it."
-    },
-    {
-      "step": "03",
-      "title": "Development or Supervision (Upfront Pricing)",
-      "description": "I either build/refactor the system myself or supervise your developers. Zero hidden fees."
-    }
-  ]
+  "pricingPromise": "Dynamic Pricing · Zero Hidden Fees · Free Initial Consultation",
+  "closingTitle": "The right solution starts with understanding your problem.",
+  "closingDescription": "Let’s talk through your needs and find the right next step—without a fixed package or hidden fees."
 }

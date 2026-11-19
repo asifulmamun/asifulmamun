@@ -25,16 +25,12 @@ const serviceIcons: Record<string, LucideIcon> = {
 
 const labels = {
   en: {
-    eyebrow: 'BUSINESS-FIRST SERVICES',
-    howWeWork: 'How We Work',
-    consultation: 'Book a Free Consultation',
+    servicesEyebrow: 'BUSINESS-FIRST SERVICES',
     deliverables: 'What you get',
     technology: 'Tools & technology',
   },
   bn: {
-    eyebrow: 'ব্যবসার জন্য উপযোগী প্রযুক্তি সেবা',
-    howWeWork: 'আমরা যেভাবে কাজ করি',
-    consultation: 'বিনামূল্যে পরামর্শ বুক করুন',
+    servicesEyebrow: 'ব্যবসার জন্য উপযোগী সেবা',
     deliverables: 'আপনি যা পাবেন',
     technology: 'প্রযুক্তি ও টুলস',
   },
@@ -54,30 +50,103 @@ export default function ServicePage({ lang }: { lang: Locale }) {
         <div className="relative z-10 mx-auto max-w-6xl">
           <div className="mx-auto max-w-3xl text-center">
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.24em] text-[color:var(--color-base)]">
-              {copy.eyebrow}
+              {content.heroEyebrow}
             </p>
             <h1 id="services-title" className="font-serif text-4xl font-semibold tracking-tight sm:text-6xl">
-              {content.sectionTitle}
+              {content.heroTitle}
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
+              {content.heroDescription}
+            </p>
+          </div>
+
+          <div className="mx-auto mt-9 flex max-w-3xl flex-col items-center justify-between gap-5 rounded-3xl border border-base/20 bg-base/[0.04] p-5 text-center dark:border-base/30 dark:bg-base/10 sm:flex-row sm:p-6 sm:text-left">
+            <div>
+              <h2 className="font-serif text-xl font-semibold">{content.consultationTitle}</h2>
+              <p className="mt-1 max-w-xl text-sm leading-6 text-slate-600 dark:text-slate-300">
+                {content.consultationDescription}
+              </p>
+            </div>
+            <Link
+              href={getLocalePath(lang, 'contact')}
+              className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-base px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-base/20 transition hover:-translate-y-0.5 hover:bg-base/90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-base"
+            >
+              {content.consultationLabel}
+              <ArrowUpRight aria-hidden="true" size={18} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="timeline-title" className="border-y border-slate-200 bg-slate-50 px-6 py-16 dark:border-white/10 dark:bg-slate-900/40 sm:py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[color:var(--color-base)]">
+              {content.consultationTitle}
+            </p>
+            <h2 id="timeline-title" className="mt-3 font-serif text-3xl font-semibold sm:text-4xl">
+              {content.timelineTitle}
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300 sm:text-base">
+              {content.timelineSubtitle}
+            </p>
+          </div>
+
+          <div className="relative mt-12">
+            <div
+              aria-hidden="true"
+              className="absolute left-[16.666%] right-[16.666%] top-5 hidden h-px bg-base/30 md:block"
+            />
+            <ol className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-6">
+              {content.timeline.map((item) => (
+                <li key={item.step} className="relative flex flex-col items-center text-center">
+                  <span className="relative z-10 inline-flex h-10 min-w-10 items-center justify-center rounded-full border-4 border-slate-50 bg-base px-2 text-xs font-bold text-white dark:border-slate-900">
+                    {item.step}
+                  </span>
+                  <h3 className="mt-5 max-w-sm font-serif text-xl font-semibold leading-snug">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 max-w-sm text-sm leading-7 text-slate-600 dark:text-slate-300">
+                    {item.description}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="services-grid-title" className="px-6 py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[color:var(--color-base)]">
+              {copy.servicesEyebrow}
+            </p>
+            <h2 id="services-grid-title" className="mt-3 font-serif text-3xl font-semibold sm:text-4xl">
+              {content.sectionTitle}
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-300 sm:text-base">
               {content.sectionSubtitle}
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {content.services.map((service) => {
               const Icon = serviceIcons[service.id];
+              const cardTone = service.featured
+                ? 'border-accent/50 bg-accent/[0.025] shadow-md shadow-accent/5 dark:border-accent/50 dark:bg-slate-900'
+                : 'border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-slate-900/70';
 
               return (
                 <article
                   key={service.id}
-                  className="flex h-full flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-base/40 hover:shadow-xl hover:shadow-base/5 dark:border-white/10 dark:bg-slate-900/70 dark:hover:border-base/50 sm:p-7"
+                  className={`flex h-full flex-col rounded-3xl border p-6 transition duration-300 hover:-translate-y-1 hover:border-base/50 hover:shadow-xl hover:shadow-base/5 dark:hover:border-base/50 sm:p-7 ${cardTone}`}
                 >
                   <div className="flex items-start justify-between gap-3">
-                    <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-base/10 text-[color:var(--color-base)]">
+                    <span className={`inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl ${service.featured ? 'bg-accent/10 text-accent' : 'bg-base/10 text-[color:var(--color-base)]'}`}>
                       <Icon aria-hidden="true" size={21} />
                     </span>
-                    <span className="rounded-full bg-accent/10 px-3 py-1.5 text-right text-xs font-bold text-accent">
+                    <span className={`rounded-full px-3 py-1.5 text-right text-xs font-bold ${service.featured ? 'bg-accent text-white' : 'bg-accent/10 text-accent'}`}>
                       {service.badge}
                     </span>
                   </div>
@@ -125,40 +194,25 @@ export default function ServicePage({ lang }: { lang: Locale }) {
         </div>
       </section>
 
-      <section aria-labelledby="engagement-title" className="border-t border-slate-200 bg-slate-50 px-6 py-16 dark:border-white/10 dark:bg-slate-900/40 sm:py-20">
-        <div className="mx-auto max-w-6xl">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[color:var(--color-base)]">
-              {lang === 'bn' ? 'সহজ ও স্বচ্ছ প্রক্রিয়া' : 'A CLEAR, STRAIGHTFORWARD PROCESS'}
+      <section aria-labelledby="closing-title" className="px-6 pb-16">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 rounded-3xl bg-base px-6 py-8 text-center text-white shadow-xl shadow-base/15 sm:flex-row sm:px-9 sm:text-left">
+          <div className="max-w-3xl">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-white/80 sm:text-sm">
+              {content.pricingPromise}
             </p>
-            <h2 id="engagement-title" className="mt-3 font-serif text-3xl font-semibold sm:text-4xl">
-              {copy.howWeWork}
+            <h2 id="closing-title" className="mt-3 font-serif text-2xl font-semibold sm:text-3xl">
+              {content.closingTitle}
             </h2>
+            <p className="mt-2 text-sm leading-6 text-white/85">
+              {content.closingDescription}
+            </p>
           </div>
-
-          <ol className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">
-            {content.engagementModel.map((item) => (
-              <li
-                key={item.step}
-                className="rounded-3xl border border-slate-200 bg-white p-6 dark:border-white/10 dark:bg-slate-950/60 sm:p-7"
-              >
-                <span className="inline-flex h-10 min-w-10 items-center justify-center rounded-xl bg-base/10 px-2 text-sm font-bold text-[color:var(--color-base)]">
-                  {item.step}
-                </span>
-                <h3 className="mt-5 font-serif text-xl font-semibold leading-snug">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
-                  {item.description}
-                </p>
-              </li>
-            ))}
-          </ol>
-
-          <div className="mt-10 flex justify-center">
+          <div className="shrink-0">
             <Link
               href={getLocalePath(lang, 'contact')}
-              className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full bg-base px-7 py-3 text-sm font-semibold text-white shadow-lg shadow-base/20 transition hover:-translate-y-0.5 hover:bg-base/90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-base"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[color:var(--color-base)] shadow-lg transition hover:-translate-y-0.5 hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
-              {copy.consultation}
+              {content.consultationLabel}
               <ArrowUpRight aria-hidden="true" size={18} />
             </Link>
           </div>

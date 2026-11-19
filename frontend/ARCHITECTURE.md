@@ -94,7 +94,10 @@ src/data/
   `description`.
 - The Services page imports its English service data directly from
   `src/data/services.json` in its Server Component and its Bengali translation
-  from `src/data/bn/services.json`. Both routes keep using the `service` slug.
+  from `src/data/bn/services.json`. The consultation-first hero and dynamic
+  pricing appear before the three-step engagement timeline, followed by the
+  service cards and closing consultation CTA. Both routes keep using the
+  `service` slug and static server rendering.
 - The home JSON also contains the banner's intro, buttons, and social links.
 
 `src/data/common-content.ts` imports common labels for the header.
