@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=IBM+Plex+Sans+Bengali:wght@100..700&family=IBM+Plex+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 @import "tailwindcss";
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
@@ -10,8 +11,10 @@
 
 	/* --color-base: #e65a4f;
 	--color-accent: #20985c; */
-	--font-serif: "Cormorant Garamond", serif;
-	--font-sans: "Poppins", sans-serif;
+	--font-serif: "IBM Plex Sans", "IBM Plex Sans Bengali", sans-serif;
+	--font-sans: "IBM Plex Sans", "IBM Plex Sans Bengali", sans-serif;
+	--font-mono: "IBM Plex Mono", monospace;
+	--font-noto-sans: "IBM Plex Sans", "IBM Plex Sans Bengali", sans-serif;
 }
 
 @keyframes tech-float {

@@ -44,6 +44,14 @@ localized pages use `generateStaticParams()` to enumerate every registered
 non-default locale at build time. `/en` is not generated; selecting English
 returns to the corresponding unprefixed URL.
 
+## Typography
+
+`src/app/globals.css` loads IBM Plex Sans for application text, with IBM Plex
+Sans Bengali as a glyph fallback for Bengali content, and IBM Plex Mono for
+monospaced text. The sans, serif, and Noto Sans Tailwind font utilities all
+resolve to the IBM Plex Sans family so existing page styles use consistent
+typography across the application.
+
 The language selector is in `src/components/global/header.tsx`:
 
 - It stores the selected code in `localStorage` under `site-language`.
