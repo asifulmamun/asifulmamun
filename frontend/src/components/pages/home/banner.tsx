@@ -38,7 +38,7 @@ export default function Banner({ content }) {
                         <path d="M2 8c14-8 20 4 34-2s20 4 34-2 20 4 34-2 20 4 34-2 20 4 34-2 20 4 34-2 20 4 34-2 20 4 34-2 20 4 34-2 20 4 34-2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
                     </svg>
                     <p
-                        className="mt-8 max-w-md text-slate-500 dark:text-slate-300"
+                        className="mt-8 max-w-md text-sm text-slate-500 dark:text-slate-300"
                         dangerouslySetInnerHTML={{ __html: content.description }}
                     />
 
