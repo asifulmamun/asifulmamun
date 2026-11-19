@@ -189,7 +189,7 @@ export default function Schedule(props: ScheduleProps) {
 
       <div className="mt-6 border-t border-slate-200/80 pt-5 dark:border-white/10">
         <div className="flex items-center gap-2 text-sm font-semibold"><CalendarDays className="h-4 w-4 text-accent" /> {props.upcomingTitle}</div>
-        <div className="mt-3 space-y-2">
+        <div className="mt-3 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
           {nextWindows.map((window) => (
             <div key={`${window.startsAt.toISOString()}-${window.channel}`} className={`grid gap-3 rounded-2xl px-4 py-3 text-sm sm:grid-cols-2 ${window.isCurrent ? 'bg-base/10 text-base' : 'bg-white/70 dark:bg-slate-950/40'}`}>
               <div>

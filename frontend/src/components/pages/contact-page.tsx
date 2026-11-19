@@ -25,7 +25,7 @@ export default function ContactPage({ content }: { content: ContactContent }) {
           <p className="mt-6 max-w-2xl leading-8 text-slate-600 dark:text-slate-300">{content.intro}</p>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-[.78fr_1.22fr]">
+        <div className="mt-12 grid gap-6">
           <ContactDetails content={profile} />
           <Schedule
             content={content.schedule}
