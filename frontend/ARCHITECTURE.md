@@ -99,10 +99,10 @@ src/data/
   `portfolio.json`; About renders a four-project preview from this shared data.
 - The Services page imports its English service data directly from
   `src/data/services.json` in its Server Component and its Bengali translation
-  from `src/data/bn/services.json`. The consultation-first hero and dynamic
-  pricing appear before the three-step engagement timeline, followed by the
-  service cards and closing consultation CTA. Both routes keep using the
-  `service` slug and static server rendering.
+  from `src/data/bn/services.json`. The shared consultation timeline component
+  renders on both the home page below the banner and the Services page after
+  its consultation hero. Service routes keep using the `service` slug and
+  static server rendering.
 - Business email setup is included in both locale service data files.
 - The home JSON also contains the banner's intro, buttons, and social links.
 
