@@ -20,7 +20,7 @@
 
 [website]: https://asifulmamun.info.bd
 [twitter]: https://twitter.com/asifulmamun
-[youtube]: https://www.youtube.com/channel/UC3Ll1aoKrLP74hflMDfWWZg
+[youtube]: https://www.youtube.com/@asifulmamun
 [github]: https://github.com/asifulmamun
 [facebook]: https://facebook.com/profile.asifulmamun.info.bd
 

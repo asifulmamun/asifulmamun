@@ -26,7 +26,7 @@ function readThemePreference(): ThemePreference | null {
             throw error;
         }
 
-        console.warn('Theme preference storage is unavailable; using the system preference.');
+        console.warn('Theme preference storage is unavailable; using the light theme.');
         return null;
     }
 }
@@ -84,20 +84,8 @@ export default function Header() {
             return;
         }
 
-        const systemTheme = window.matchMedia?.('(prefers-color-scheme: dark)');
-        const isDarkMode = systemTheme?.matches ?? false;
-        setDarkMode(isDarkMode);
-        applyTheme(isDarkMode);
-
-        function followSystemTheme(event: MediaQueryListEvent) {
-            if (readThemePreference() === null) {
-                setDarkMode(event.matches);
-                applyTheme(event.matches);
-            }
-        }
-
-        systemTheme?.addEventListener('change', followSystemTheme);
-        return () => systemTheme?.removeEventListener('change', followSystemTheme);
+        setDarkMode(false);
+        applyTheme(false);
     }, []);
 
     function toggleTheme() {

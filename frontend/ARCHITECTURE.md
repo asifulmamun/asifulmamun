@@ -230,8 +230,9 @@ The theme toggle is in `src/components/global/header.tsx`.
 - Shared visual colors are defined as `--color-base`, `--color-accent`, and
   `--color-optional` in `src/app/globals.css`. Prefer these tokens for new UI
   and provide matching `dark:` styles.
-- `navbar-theme` in `localStorage` stores `dark` or `light`; if unset, the
-  browser's system color preference is used.
+- `navbar-theme` in `localStorage` stores `dark` or `light`; if unset or
+  unavailable, the page defaults to light regardless of the browser's system
+  color preference.
 - The selected theme is reflected as `data-theme` on the root `<html>` element.
 - The theme toggle updates the mobile browser chrome through the shared
   `theme-color` meta tag. If browser storage is blocked, the theme still changes
