@@ -34,9 +34,16 @@ export default function ContactPage({ content }: { content: ContactContent }) {
             deviceTimezoneTitle={content.deviceTimezoneTitle}
             availableNow={content.availableNow}
             outsideHours={content.outsideHours}
+            checkingAvailability={content.checkingAvailability}
             whatsappWindow={content.whatsappWindow}
             emailAlways={content.emailAlways}
             intro={content.scheduleIntro}
+            upcomingTitle={content.upcomingTitle}
+            dhakaColumn={content.dhakaColumn}
+            localColumn={content.localColumn}
+            weekdaysLabel={content.weekdaysLabel}
+            weekendLabel={content.weekendLabel}
+            whatsappChannel={content.whatsappChannel}
           />
         </div>
       </div>

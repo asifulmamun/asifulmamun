@@ -25,18 +25,24 @@
   "deviceTimezoneTitle": "আপনার লোকাল সময়",
   "availableNow": "এখন উপলব্ধ",
   "outsideHours": "বর্তমানে অনুপলব্ধ",
+  "checkingAvailability": "সময় যাচাই হচ্ছে",
   "whatsappWindow": "নির্ধারিত সময়ে WhatsApp-এ যোগাযোগ করা যাবে",
   "emailAlways": "Business inquiry এবং cost optimization consultation-এর জন্য ইমেল সবসময় open",
-  "scheduleIntro": "সময় বাংলাদেশ Standard Time (UTC+06:00)-এ প্রদর্শিত। নিচে আপনার device-এর local time স্বয়ংক্রিয়ভাবে দেখানো হবে।",
+  "scheduleIntro": "যেকোনো সময় যোগাযোগ করতে পারবেন। দ্রুত WhatsApp উত্তর বা বিনামূল্যে consultation-এর জন্য আমার ঢাকার সময়ের পাশে আপনার দেশের একই সময় দেখে নিন।",
+  "upcomingTitle": "আসন্ন availability · পরবর্তী ৭ দিন",
+  "dhakaColumn": "ঢাকা সময়",
+  "localColumn": "আপনার সময়",
+  "weekdaysLabel": "কর্মদিবস",
+  "weekendLabel": "সাপ্তাহিক ছুটি",
+  "whatsappChannel": "WhatsApp consultation",
   "schedule": {
     "timezone": "Asia/Dhaka",
     "timezoneLabel": "BDT · UTC+06:00",
-    "weekend": [
-      { "start": "11:00", "end": "13:00", "channel": "whatsapp" },
-      { "start": "16:00", "end": "21:00", "channel": "whatsapp" }
-    ],
-    "weekday": [
-      { "start": "10:00", "end": "12:00", "channel": "whatsapp" }
+    "locale": "bn-BD",
+    "windows": [
+      { "days": [1, 2, 3, 4, 5], "start": "10:00", "end": "12:00", "kind": "weekdays", "channel": "whatsapp" },
+      { "days": [0, 6], "start": "11:00", "end": "13:00", "kind": "weekend", "channel": "whatsapp" },
+      { "days": [0, 6], "start": "16:00", "end": "21:00", "kind": "weekend", "channel": "whatsapp" }
     ]
   }
 }

@@ -25,18 +25,24 @@
   "deviceTimezoneTitle": "Your local time",
   "availableNow": "Available now",
   "outsideHours": "Currently unavailable",
+  "checkingAvailability": "Checking availability",
   "whatsappWindow": "WhatsApp is available during the scheduled time",
   "emailAlways": "Email is always open for business inquiries and cost optimization consultations",
-  "scheduleIntro": "Times are shown in Bangladesh Standard Time (UTC+06:00). Your device time is shown automatically below.",
+  "scheduleIntro": "You can contact me anytime. For a quicker WhatsApp response or a free consultation, compare my Dhaka availability with the same hours in your local timezone.",
+  "upcomingTitle": "Upcoming availability · next 7 days",
+  "dhakaColumn": "Dhaka time",
+  "localColumn": "Your time",
+  "weekdaysLabel": "Weekdays",
+  "weekendLabel": "Weekend",
+  "whatsappChannel": "WhatsApp consultation",
   "schedule": {
     "timezone": "Asia/Dhaka",
     "timezoneLabel": "BDT · UTC+06:00",
-    "weekend": [
-      { "start": "11:00", "end": "13:00", "channel": "whatsapp" },
-      { "start": "16:00", "end": "21:00", "channel": "whatsapp" }
-    ],
-    "weekday": [
-      { "start": "10:00", "end": "12:00", "channel": "whatsapp" }
+    "locale": "en-US",
+    "windows": [
+      { "days": [1, 2, 3, 4, 5], "start": "10:00", "end": "12:00", "kind": "weekdays", "channel": "whatsapp" },
+      { "days": [0, 6], "start": "11:00", "end": "13:00", "kind": "weekend", "channel": "whatsapp" },
+      { "days": [0, 6], "start": "16:00", "end": "21:00", "kind": "weekend", "channel": "whatsapp" }
     ]
   }
 }
