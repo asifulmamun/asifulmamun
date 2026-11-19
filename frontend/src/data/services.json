@@ -147,6 +147,25 @@
         "Zoho Mail",
         "Linux"
       ]
+    },
+    {
+      "id": "business-email-setup",
+      "title": "Business Email & Domain Integration",
+      "badge": "Email for Your Business",
+      "featured": true,
+      "businessFocus": "Set up professional email for your company or organization on its own domain. Choose Zoho Mail's free option where available and eligible, or use Google Workspace, Microsoft 365, or another provider that fits your needs.",
+      "deliverables": [
+        "Domain and DNS setup for reliable mail delivery",
+        "Zoho Mail, Google Workspace, or Microsoft 365 configuration",
+        "Mailbox setup, migration guidance, and email authentication"
+      ],
+      "techStack": [
+        "Zoho Mail",
+        "Google Workspace",
+        "Microsoft 365",
+        "DNS",
+        "SPF / DKIM / DMARC"
+      ]
     }
   ],
   "pricingPromise": "Dynamic Pricing · Zero Hidden Fees · Free Initial Consultation",

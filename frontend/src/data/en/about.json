@@ -91,24 +91,5 @@
       { "degree": "Secondary School Certificate", "institution": "Kuliarchar Govt. (Pilot Model) High School", "year": "2015", "detail": "Science, Dhaka Board" }
     ],
     "training": ["Cloud Service Management with AWS — BASIS, SEIP (2023)", "MikroTik Certified Network Associate & OLT — ITQ Solutions (2022)", "CCNA — Cisco Certified Network Associate (2022)", "Web Design and Development — LEDP (2017)", "Computer Basic Applications — Papiya Computer Institute (2015)"]
-  },
-  "portfolio": {
-    "title": "Selected Portfolio",
-    "intro": "A selection of public projects. Many commercial projects remain private for security and client confidentiality.",
-    "items": [
-      { "name": "Laravel Multivendor E-commerce", "url": "https://ecommerce.qligence.com/", "type": "Laravel · Features & API" },
-      { "name": "WordPress 3D Renderable Plugin", "url": "https://jonssteel.com/render_3d/", "type": "WordPress · 3D" },
-      { "name": "JONS Steel", "url": "https://jonssteel.com", "type": "WordPress" },
-      { "name": "Fish Mart", "url": "https://fishmart.com.bd", "type": "WordPress" },
-      { "name": "BD1971", "url": "https://bd1971.com", "type": "WordPress" },
-      { "name": "Sami Engineering", "url": "https://samiengineering.com", "type": "WordPress" },
-      { "name": "Python Screenshot Desktop App", "url": "https://www.youtube.com/watch?v=Xq0BwFFWOxQ", "type": "Python · Demo" },
-      { "name": "Laravel Supply Management", "url": "https://www.youtube.com/watch?v=5Nm6X_GSxo8", "type": "Laravel · Demo" },
-      { "name": "Pick and Share Laravel", "url": "https://github.com/asifulmamun/Pick-and-Share-Laravel", "type": "GitHub · University Project" },
-      { "name": "GIS Custom Map Visualization", "url": "https://asifulmamun.github.io/OpenStreatMap-GIS-API/", "type": "GIS · JavaScript" },
-      { "name": "WooCommerce Image Upload", "url": "https://github.com/asifulmamun/ccibu", "type": "WooCommerce · Plugin" },
-      { "name": "PHP & MySQL Result System", "url": "https://github.com/asifulmamun/result_hisbul.com", "type": "PHP · MySQL" },
-      { "name": "PHP & MySQL Blood Bank", "url": "https://github.com/asifulmamun/febbms", "type": "PHP · MySQL" }
-    ]
   }
 }

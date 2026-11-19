@@ -13,7 +13,7 @@ import {
     languages,
 } from '@/src/data/languages';
 
-const supportedPages = ['', 'about', 'service', 'contact'];
+const supportedPages = ['', 'about', 'portfolio', 'service', 'contact'];
 
 type ThemePreference = 'dark' | 'light';
 
@@ -68,6 +68,7 @@ export default function Header() {
     const navigation = [
         { label: navigationLabels.home, href: getLocalePath(currentLocale, '') },
         { label: navigationLabels.about, href: getLocalePath(currentLocale, 'about') },
+        { label: navigationLabels.portfolio, href: getLocalePath(currentLocale, 'portfolio') },
         { label: navigationLabels.service, href: getLocalePath(currentLocale, 'service') },
         { label: navigationLabels.contact, href: getLocalePath(currentLocale, 'contact') },
     ];

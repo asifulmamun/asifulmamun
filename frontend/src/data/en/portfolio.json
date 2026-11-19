@@ -1,0 +1,53 @@
+{
+  "seo": {
+    "title": "Portfolio | Al Mamun - Business & E-commerce Solutions",
+    "description": "Explore selected web projects and business solutions, including e-commerce development and domain-based business email setup."
+  },
+  "heroEyebrow": "SELECTED WORK & BUSINESS SOLUTIONS",
+  "heroTitle": "Practical digital solutions for growing businesses.",
+  "heroDescription": "From a professional company email on your own domain to dependable e-commerce platforms, I help organizations choose and build technology that fits the way they work.",
+  "solutionsTitle": "Business solutions",
+  "solutionsDescription": "Start with the business need: a trusted way to communicate, a smoother way to sell, or a more useful digital presence.",
+  "solutions": [
+    {
+      "title": "Business email on your domain",
+      "description": "Set up professional addresses for your company or organization using Zoho Mail, Google Workspace, Microsoft 365, or another suitable provider.",
+      "highlights": [
+        "Zoho Mail free option when available and eligible",
+        "Premium Google Workspace and Microsoft 365 setup",
+        "Domain, DNS, mailbox, and email authentication configuration"
+      ],
+      "type": "Email & collaboration"
+    },
+    {
+      "title": "E-commerce built for your workflow",
+      "description": "Build or improve online stores that make product discovery, checkout, and day-to-day operations easier for customers and teams.",
+      "highlights": [
+        "WooCommerce and custom Laravel stores",
+        "Multi-vendor and catalog solutions",
+        "Payment, shipping, and business workflow integrations"
+      ],
+      "type": "Online commerce"
+    }
+  ],
+  "projectsTitle": "Selected portfolio",
+  "projectsDescription": "A selection of public work and demos. Some commercial projects are not listed because of client confidentiality.",
+  "items": [
+    { "name": "Laravel Multivendor E-commerce", "url": "https://ecommerce.qligence.com/", "type": "Laravel · Features & API" },
+    { "name": "WordPress 3D Renderable Plugin", "url": "https://jonssteel.com/render_3d/", "type": "WordPress · 3D" },
+    { "name": "JONS Steel", "url": "https://jonssteel.com", "type": "WordPress" },
+    { "name": "Fish Mart", "url": "https://fishmart.com.bd", "type": "WordPress" },
+    { "name": "BD1971", "url": "https://bd1971.com", "type": "WordPress" },
+    { "name": "Sami Engineering", "url": "https://samiengineering.com", "type": "WordPress" },
+    { "name": "Python Screenshot Desktop App", "url": "https://www.youtube.com/watch?v=Xq0BwFFWOxQ", "type": "Python · Demo" },
+    { "name": "Laravel Supply Management", "url": "https://www.youtube.com/watch?v=5Nm6X_GSxo8", "type": "Laravel · Demo" },
+    { "name": "Pick and Share Laravel", "url": "https://github.com/asifulmamun/Pick-and-Share-Laravel", "type": "GitHub · University Project" },
+    { "name": "GIS Custom Map Visualization", "url": "https://asifulmamun.github.io/OpenStreatMap-GIS-API/", "type": "GIS · JavaScript" },
+    { "name": "WooCommerce Image Upload", "url": "https://github.com/asifulmamun/ccibu", "type": "WooCommerce · Plugin" },
+    { "name": "PHP & MySQL Result System", "url": "https://github.com/asifulmamun/result_hisbul.com", "type": "PHP · MySQL" },
+    { "name": "PHP & MySQL Blood Bank", "url": "https://github.com/asifulmamun/febbms", "type": "PHP · MySQL" }
+  ],
+  "contactTitle": "Have a business solution in mind?",
+  "contactDescription": "Tell me what your organization needs, and we can discuss a practical next step.",
+  "contactLabel": "Discuss your project"
+}

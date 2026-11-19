@@ -33,5 +33,11 @@ export default async function LocalizedAbout({
 }) {
   const { lang } = await params;
   if (!isLocale(lang) || lang === 'en') notFound();
-  return <AboutPage content={localeContent[lang].about} />;
+  return (
+    <AboutPage
+      content={localeContent[lang].about}
+      portfolio={localeContent[lang].portfolio}
+      locale={lang}
+    />
+  );
 }

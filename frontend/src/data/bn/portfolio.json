@@ -1,0 +1,53 @@
+{
+  "seo": {
+    "title": "পোর্টফোলিও | আল মামুন - ব্যবসা ও ই-কমার্স সমাধান",
+    "description": "ডোমেইনভিত্তিক ব্যবসায়িক ইমেইল সেটআপ ও ই-কমার্স ডেভেলপমেন্টসহ নির্বাচিত ওয়েব প্রকল্প ও ব্যবসায়িক সমাধান দেখুন।"
+  },
+  "heroEyebrow": "নির্বাচিত কাজ ও ব্যবসায়িক সমাধান",
+  "heroTitle": "বর্ধনশীল ব্যবসার জন্য ব্যবহারিক ডিজিটাল সমাধান।",
+  "heroDescription": "নিজস্ব ডোমেইনে প্রতিষ্ঠানের ইমেইল থেকে নির্ভরযোগ্য ই-কমার্স প্ল্যাটফর্ম—প্রতিষ্ঠানের কাজের ধরন অনুযায়ী প্রযুক্তি বেছে নিতে ও তৈরি করতে সহায়তা করি।",
+  "solutionsTitle": "ব্যবসায়িক সমাধান",
+  "solutionsDescription": "ব্যবসার প্রয়োজনকে গুরুত্ব দিয়ে শুরু করি—বিশ্বস্ত যোগাযোগ, সহজ অনলাইন বিক্রি অথবা কার্যকর ডিজিটাল উপস্থিতি।",
+  "solutions": [
+    {
+      "title": "নিজস্ব ডোমেইনে ব্যবসায়িক ইমেইল",
+      "description": "Zoho Mail, Google Workspace, Microsoft 365 অথবা উপযুক্ত অন্য সেবাদাতার মাধ্যমে প্রতিষ্ঠান বা সংস্থার পেশাদার ইমেইল সেটআপ।",
+      "highlights": [
+        "সুযোগ ও যোগ্যতা থাকলে Zoho Mail-এর বিনামূল্যের সুবিধা",
+        "Google Workspace ও Microsoft 365 প্রিমিয়াম সেটআপ",
+        "ডোমেইন, DNS, মেইলবক্স ও ইমেইল অথেনটিকেশন কনফিগারেশন"
+      ],
+      "type": "ইমেইল ও সহযোগিতা"
+    },
+    {
+      "title": "আপনার কাজের উপযোগী ই-কমার্স",
+      "description": "এমন অনলাইন স্টোর তৈরি বা উন্নত করি, যা পণ্য খোঁজা, অর্ডার ও দৈনন্দিন পরিচালনা—ক্রেতা এবং দলের জন্য সহজ করে।",
+      "highlights": [
+        "WooCommerce ও কাস্টম Laravel স্টোর",
+        "মাল্টি-ভেন্ডর ও পণ্য ক্যাটালগ সমাধান",
+        "পেমেন্ট, শিপিং ও ব্যবসায়িক workflow সংযুক্তকরণ"
+      ],
+      "type": "অনলাইন বাণিজ্য"
+    }
+  ],
+  "projectsTitle": "নির্বাচিত পোর্টফোলিও",
+  "projectsDescription": "সর্বসাধারণের জন্য উন্মুক্ত কাজ ও ডেমোর কিছু নমুনা। ক্লায়েন্টের গোপনীয়তার কারণে কিছু বাণিজ্যিক প্রকল্প এখানে নেই।",
+  "items": [
+    { "name": "Laravel Multivendor E-commerce", "url": "https://ecommerce.qligence.com/", "type": "Laravel · Features & API" },
+    { "name": "WordPress 3D Renderable Plugin", "url": "https://jonssteel.com/render_3d/", "type": "WordPress · 3D" },
+    { "name": "JONS Steel", "url": "https://jonssteel.com", "type": "WordPress" },
+    { "name": "Fish Mart", "url": "https://fishmart.com.bd", "type": "WordPress" },
+    { "name": "BD1971", "url": "https://bd1971.com", "type": "WordPress" },
+    { "name": "Sami Engineering", "url": "https://samiengineering.com", "type": "WordPress" },
+    { "name": "Python Screenshot Desktop App", "url": "https://www.youtube.com/watch?v=Xq0BwFFWOxQ", "type": "Python · Demo" },
+    { "name": "Laravel Supply Management", "url": "https://www.youtube.com/watch?v=5Nm6X_GSxo8", "type": "Laravel · Demo" },
+    { "name": "Pick and Share Laravel", "url": "https://github.com/asifulmamun/Pick-and-Share-Laravel", "type": "GitHub · University Project" },
+    { "name": "GIS Custom Map Visualization", "url": "https://asifulmamun.github.io/OpenStreatMap-GIS-API/", "type": "GIS · JavaScript" },
+    { "name": "WooCommerce Image Upload", "url": "https://github.com/asifulmamun/ccibu", "type": "WooCommerce · Plugin" },
+    { "name": "PHP & MySQL Result System", "url": "https://github.com/asifulmamun/result_hisbul.com", "type": "PHP · MySQL" },
+    { "name": "PHP & MySQL Blood Bank", "url": "https://github.com/asifulmamun/febbms", "type": "PHP · MySQL" }
+  ],
+  "contactTitle": "আপনার ব্যবসার জন্য সমাধান খুঁজছেন?",
+  "contactDescription": "আপনার প্রতিষ্ঠানের প্রয়োজন জানান, আমরা বাস্তবসম্মত পরবর্তী পদক্ষেপ নিয়ে আলোচনা করব।",
+  "contactLabel": "প্রকল্প নিয়ে আলোচনা করুন"
+}

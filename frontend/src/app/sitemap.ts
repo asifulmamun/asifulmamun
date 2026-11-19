@@ -5,7 +5,7 @@ import { getSiteUrl } from '@/src/data/site-metadata';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const pages = ['', 'about', 'service', 'contact', 'privacy-policy', 'faq', 'terms', 'affiliate'];
+  const pages = ['', 'about', 'portfolio', 'service', 'contact', 'privacy-policy', 'faq', 'terms', 'affiliate'];
   const siteUrl = getSiteUrl();
 
   return Object.keys(languages).flatMap((locale) => {

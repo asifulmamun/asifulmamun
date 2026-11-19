@@ -147,6 +147,25 @@
         "Zoho Mail",
         "Linux"
       ]
+    },
+    {
+      "id": "business-email-setup",
+      "title": "ব্যবসায়িক ইমেইল ও ডোমেইন ইন্টিগ্রেশন",
+      "badge": "প্রতিষ্ঠানের ইমেইল",
+      "featured": true,
+      "businessFocus": "নিজস্ব ডোমেইনে প্রতিষ্ঠান বা সংস্থার পেশাদার ইমেইল সেটআপ করুন। সুযোগ ও যোগ্যতা থাকলে Zoho Mail-এর বিনামূল্যের সুবিধা, অথবা প্রয়োজন অনুযায়ী Google Workspace, Microsoft 365 কিংবা অন্য সেবাদাতা বেছে নিন।",
+      "deliverables": [
+        "নির্ভরযোগ্য ইমেইল ডেলিভারির জন্য ডোমেইন ও DNS সেটআপ",
+        "Zoho Mail, Google Workspace অথবা Microsoft 365 কনফিগারেশন",
+        "মেইলবক্স সেটআপ, মাইগ্রেশন নির্দেশনা ও ইমেইল অথেনটিকেশন"
+      ],
+      "techStack": [
+        "Zoho Mail",
+        "Google Workspace",
+        "Microsoft 365",
+        "DNS",
+        "SPF / DKIM / DMARC"
+      ]
     }
   ],
   "pricingPromise": "ডাইনামিক প্রাইসিং · কোনো গোপন খরচ নেই · বিনামূল্যে প্রাথমিক পরামর্শ",

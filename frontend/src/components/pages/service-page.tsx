@@ -4,6 +4,7 @@ import {
   Bot,
   Check,
   Cloud,
+  Mail,
   Network,
   ShieldCheck,
   ShoppingCart,
@@ -19,6 +20,7 @@ const serviceIcons: Record<string, LucideIcon> = {
   'ecommerce-web-solutions': ShoppingCart,
   'vibe-code-refactoring': Wrench,
   'ai-integration-automation': Bot,
+  'business-email-setup': Mail,
   'technical-supervision': ShieldCheck,
   'it-network-infrastructure': Network,
 };

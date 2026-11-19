@@ -3,9 +3,18 @@ import Skills from '@/src/components/pages/about/skills';
 import Experience from '@/src/components/pages/about/experience';
 import Education from '@/src/components/pages/about/education';
 import Portfolio from '@/src/components/pages/about/portfolio';
-import type { AboutContent } from '@/src/data/locale-content';
+import type { Locale } from '@/src/data/languages';
+import type { AboutContent, PortfolioContent } from '@/src/data/locale-content';
 
-export default function AboutPage({ content }: { content: AboutContent }) {
+export default function AboutPage({
+  content,
+  portfolio,
+  locale,
+}: {
+  content: AboutContent;
+  portfolio: PortfolioContent;
+  locale: Locale;
+}) {
   return (
     <main className="bg-white font-sans text-slate-900 dark:bg-slate-950 dark:text-slate-100">
       <div className="mx-auto max-w-6xl space-y-20 px-6 py-16 sm:space-y-24 sm:py-24">
@@ -19,9 +28,11 @@ export default function AboutPage({ content }: { content: AboutContent }) {
           training={content.education.training}
         />
         <Portfolio
-          title={content.portfolio.title}
-          intro={content.portfolio.intro}
-          items={content.portfolio.items}
+          title={portfolio.projectsTitle}
+          intro={portfolio.projectsDescription}
+          items={portfolio.items}
+          locale={locale}
+          viewMoreLabel={locale === 'bn' ? 'সব পোর্টফোলিও দেখুন' : 'View all portfolio'}
         />
       </div>
     </main>

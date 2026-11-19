@@ -23,6 +23,7 @@ a Next.js route group, so its name does not appear in URLs.
 | --- | --- | --- |
 | Home | `/` | `/bn` |
 | About | `/about` | `/bn/about` |
+| Portfolio | `/portfolio` | `/bn/portfolio` |
 | Services | `/service` | `/bn/service` |
 | Contact | `/contact` | `/bn/contact` |
 
@@ -78,6 +79,7 @@ src/data/
     common.json
     home.json
     about.json
+    portfolio.json
     service.json
     contact.json
   bn/
@@ -85,6 +87,7 @@ src/data/
     common.json
     home.json
     about.json
+    portfolio.json
     service.json
     contact.json
 ```
@@ -92,12 +95,15 @@ src/data/
 - `common.json` contains shared navigation labels and header copy.
 - Each page JSON contains that page's text and a `seo` object with `title` and
   `description`.
+- Portfolio projects and business-solution copy live in each locale's
+  `portfolio.json`; About renders a four-project preview from this shared data.
 - The Services page imports its English service data directly from
   `src/data/services.json` in its Server Component and its Bengali translation
   from `src/data/bn/services.json`. The consultation-first hero and dynamic
   pricing appear before the three-step engagement timeline, followed by the
   service cards and closing consultation CTA. Both routes keep using the
   `service` slug and static server rendering.
+- Business email setup is included in both locale service data files.
 - The home JSON also contains the banner's intro, buttons, and social links.
 
 `src/data/common-content.ts` imports common labels for the header.
@@ -109,20 +115,20 @@ locale-to-page map used by route components.
 For example, to add French (`fr`):
 
 1. Create `src/data/fr/` and add `common.json`, `home.json`, `about.json`,
-   `service.json`, and `contact.json`. Follow the existing JSON shapes and
-   translate all user-facing copy and every page's `seo.title` and
-   `seo.description`.
+   `portfolio.json`, `service.json`, and `contact.json`. Follow the existing
+   JSON shapes and translate all user-facing copy and every page's
+   `seo.title` and `seo.description`.
 2. Add `fr` to `src/data/languages.ts`, including its selector label,
    `htmlLang`, and Open Graph locale. Keep `en` as `defaultLocale` unless the
    default URL policy is intentionally changing.
 3. Import and register the new common JSON in `src/data/common-content.ts`.
-4. Import and register all four page JSON files in `src/data/locale-content.ts`.
+4. Import and register all page JSON files in `src/data/locale-content.ts`.
 5. Run `pnpm exec tsc --noEmit` and `pnpm build` from `frontend/`.
 
 After registration, the selector, `[lang]` static params, localized HTML
 language, SEO alternate-language URLs, and locale entries in the sitemap all
-use the new locale. The routes will be `/fr`, `/fr/about`, `/fr/service`, and
-`/fr/contact`.
+use the new locale. The routes will include `/fr`, `/fr/about`, `/fr/portfolio`,
+`/fr/service`, and `/fr/contact`.
 
 ## Add a page
 
