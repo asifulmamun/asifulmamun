@@ -67,7 +67,7 @@ function formatClock(date: Date, timezone: string, locale: string) {
     timeZone: timezone,
     hour: '2-digit',
     minute: '2-digit',
-    hourCycle: 'h23',
+    hour12: true,
   }).format(date);
 }
 
@@ -79,6 +79,7 @@ function formatScheduleTime(date: Date, timezone: string, locale: string) {
     day: 'numeric',
     hour: 'numeric',
     minute: '2-digit',
+    hour12: true,
   }).format(date);
 }
 
