@@ -1,0 +1,69 @@
+# name: Cloudflare Pages SSG Deployment | Next.js | asifulmamun.info.bd
+
+# on:
+#   push:
+#     branches:
+#       - prod-frontend # as per branch
+
+
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     environment: prod-frontend # as per environment of github repo secreats enviroment secreat and variable will be used in this environment
+
+#     defaults:
+#       run:
+#         working-directory: ./frontend
+
+#     steps:
+#       # 1️⃣ Checkout the repo
+#       - name: Checkout code
+#         uses: actions/checkout@v3
+
+#       # 2️⃣ Setup Node.js
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: '22'
+
+#       # 3️⃣ Setup pnpm
+#       - name: Setup pnpm
+#         run: |
+#           npm install -g pnpm@11
+#           pnpm -v
+
+#       # 4️⃣ Cache pnpm store and node_modules
+#       - name: Cache pnpm
+#         uses: actions/cache@v3
+#         with:
+#           path: |
+#             ~/.pnpm-store
+#             frontend/node_modules
+#           key: ${{ runner.os }}-pnpm-${{ hashFiles('frontend/pnpm-lock.yaml') }}
+#           restore-keys: |
+#             ${{ runner.os }}-pnpm-
+
+#       # 5️⃣ Create .env.production dynamically from secrets
+#       - name: Create .env.production
+#         run: |
+#           echo "NEXT_PUBLIC_BASE_URL=${{ secrets.NEXT_PUBLIC_BASE_URL }}" >> .env.production
+
+#       # 6️⃣ Install dependencies using pnpm
+#       - name: Install dependencies
+#         working-directory: ./frontend
+#         run: pnpm install --ignore-scripts
+
+#       # 7️⃣ Build Next.js static site
+#       - name: Build Next.js static site
+#         working-directory: ./frontend
+#         run: pnpm build && ls -la
+
+#       # 8️⃣ Deploy to Cloudflare Pages
+#       - name: Deploy to Cloudflare Pages
+#         uses: cloudflare/pages-action@v1
+#         with:
+#           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+#           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+#           projectName: "usedfurniturebuyermadinah"  # your Cloudflare Pages project name
+#           directory: frontend/out
+#           wranglerVersion: 2
