@@ -27,8 +27,9 @@
   "outsideHours": "বর্তমানে অনুপলব্ধ",
   "briefDelay": "অল্প delay",
   "checkingAvailability": "সময় যাচাই হচ্ছে",
-  "emailAlways": "দ্রুত response: সকাল ১০টা–রাত ১০টা · অল্প delay: রাত ১০টা–১১:৫৯টা · ১১:৫৯টার পর delayable response · Asia/Dhaka",
-  "scheduleIntro": "যেকোনো সময় যোগাযোগ করতে পারবেন। দ্রুত WhatsApp উত্তর বা বিনামূল্যে consultation-এর জন্য আমার ঢাকার সময়ের পাশে আপনার দেশের একই সময় দেখে নিন।",
+  "scheduleNote": "দ্রুত response: {start}–{end} · অল্প delay: {end}–{briefEnd} · {briefEnd} এর পর delayable response · Asia/Dhaka",
+  "countdownLabel": "পরবর্তী quick response",
+  "availableInLabel": "এখন quick response উপলব্ধ",
   "upcomingTitle": "দৈনিক availability",
   "dhakaColumn": "ঢাকা সময়",
   "localColumn": "আপনার সময়",
@@ -39,6 +40,7 @@
     "timezone": "Asia/Dhaka",
     "timezoneLabel": "Asia/Dhaka · UTC+06:00",
     "locale": "bn-BD",
+    "briefEnd": "23:59",
     "windows": [
       { "days": [0, 1, 2, 3, 4, 5, 6], "start": "10:00", "end": "22:00", "kind": "daily", "channel": "whatsapp" }
     ]

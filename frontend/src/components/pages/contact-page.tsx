@@ -36,8 +36,9 @@ export default function ContactPage({ content }: { content: ContactContent }) {
             outsideHours={content.outsideHours}
             briefDelay={content.briefDelay}
             checkingAvailability={content.checkingAvailability}
-            emailAlways={content.emailAlways}
-            intro={content.scheduleIntro}
+            scheduleNote={content.scheduleNote}
+            countdownLabel={content.countdownLabel}
+            availableInLabel={content.availableInLabel}
             upcomingTitle={content.upcomingTitle}
             dhakaColumn={content.dhakaColumn}
             localColumn={content.localColumn}

@@ -15,6 +15,7 @@ export type ContactScheduleContent = {
   timezone: string;
   timezoneLabel: string;
   locale: string;
+  briefEnd: string;
   windows: ScheduleWindow[];
 };
 
@@ -27,8 +28,9 @@ type ScheduleProps = {
   outsideHours: string;
   briefDelay: string;
   checkingAvailability: string;
-  emailAlways: string;
-  intro: string;
+  scheduleNote: string;
+  countdownLabel: string;
+  availableInLabel: string;
   upcomingTitle: string;
   dhakaColumn: string;
   localColumn: string;
@@ -123,6 +125,14 @@ function formatWindowClock(time: string, locale: string) {
   }).format(date);
 }
 
+function formatCountdown(milliseconds: number) {
+  const totalSeconds = Math.max(0, Math.ceil(milliseconds / 1000));
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+  return [hours, minutes, seconds].map((value) => String(value).padStart(2, '0')).join(':');
+}
+
 function zonedDateTimeToInstant(parts: DateParts, hour: number, minute: number, timezone: string) {
   const targetAsUtc = Date.UTC(parts.year, parts.month - 1, parts.day, hour, minute);
   let timestamp = targetAsUtc;
@@ -142,7 +152,7 @@ export default function Schedule(props: ScheduleProps) {
     const browserTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone || 'Local timezone';
     setDeviceTimezone(browserTimezone);
     setNow(new Date());
-    const timer = window.setInterval(() => setNow(new Date()), 15_000);
+    const timer = window.setInterval(() => setNow(new Date()), 1_000);
 
     let active = true;
     void detectIpTimezone().then((ipTimezone) => {
@@ -158,6 +168,7 @@ export default function Schedule(props: ScheduleProps) {
   const currentDhakaTime = now ? dateParts(now, props.content.timezone) : null;
   const deviceTime = now && deviceTimezone ? formatClock(now, deviceTimezone, props.content.locale) : '--:--';
   const dhakaTime = now ? formatClock(now, props.content.timezone, props.content.locale) : '--:--';
+  const availabilityWindow = props.content.windows[0];
   const isOnline = currentDhakaTime ? props.content.windows.some((window) => {
     if (!window.days.includes(currentDhakaTime.weekday)) return false;
     const minute = currentDhakaTime.hour * 60 + currentDhakaTime.minute;
@@ -168,9 +179,13 @@ export default function Schedule(props: ScheduleProps) {
   const currentMinute = currentDhakaTime
     ? currentDhakaTime.hour * 60 + currentDhakaTime.minute
     : null;
+  const [briefEndHour, briefEndMinute] = props.content.briefEnd.split(':').map(Number);
+  const briefEndMinuteOfDay = briefEndHour * 60 + briefEndMinute;
+  const [availabilityEndHour, availabilityEndMinute] = availabilityWindow?.end.split(':').map(Number) ?? [0, 0];
+  const availabilityEndMinuteOfDay = availabilityEndHour * 60 + availabilityEndMinute;
   const isBriefDelay = isOnline
     ? false
-    : currentMinute !== null && currentMinute >= 22 * 60 && currentMinute < 24 * 60;
+    : currentMinute !== null && currentMinute >= availabilityEndMinuteOfDay && currentMinute <= briefEndMinuteOfDay;
   const availabilityStatus = !now
     ? props.checkingAvailability
     : isOnline
@@ -182,13 +197,12 @@ export default function Schedule(props: ScheduleProps) {
     ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300'
     : isBriefDelay
       ? 'bg-orange-100 text-orange-700 dark:bg-orange-500/15 dark:text-orange-300'
-      : 'bg-slate-200/70 text-slate-500 dark:bg-white/10 dark:text-slate-400';
+      : 'bg-red-100 text-red-700 dark:bg-red-500/15 dark:text-red-300';
   const statusDotClasses = isOnline
     ? 'animate-pulse bg-emerald-500'
     : isBriefDelay
-      ? 'bg-orange-500'
-      : 'bg-slate-400';
-  const availabilityWindow = props.content.windows[0];
+      ? 'animate-pulse bg-orange-500'
+      : 'bg-red-500';
   let localAvailabilityStart = '--';
   let localAvailabilityEnd = '--';
   if (now && deviceTimezone && availabilityWindow) {
@@ -198,21 +212,61 @@ export default function Schedule(props: ScheduleProps) {
     localAvailabilityStart = formatClock(zonedDateTimeToInstant(today, startHour, startMinute, props.content.timezone), deviceTimezone, props.content.locale);
     localAvailabilityEnd = formatClock(zonedDateTimeToInstant(today, endHour, endMinute, props.content.timezone), deviceTimezone, props.content.locale);
   }
+  let countdown = '';
+  let nextQuickResponseLocal = '';
+  if (now && deviceTimezone && availabilityWindow && currentDhakaTime) {
+    const [startHour, startMinute] = availabilityWindow.start.split(':').map(Number);
+    const startMinuteOfDay = startHour * 60 + startMinute;
+    let nextParts: DateParts = { ...currentDhakaTime };
+    if (currentMinute !== null && currentMinute >= startMinuteOfDay) {
+      const tomorrow = new Date(Date.UTC(nextParts.year, nextParts.month - 1, nextParts.day + 1));
+      nextParts = {
+        ...nextParts,
+        year: tomorrow.getUTCFullYear(),
+        month: tomorrow.getUTCMonth() + 1,
+        day: tomorrow.getUTCDate(),
+        weekday: tomorrow.getUTCDay(),
+      };
+    }
+    const nextQuickResponse = zonedDateTimeToInstant(nextParts, startHour, startMinute, props.content.timezone);
+    countdown = formatCountdown(nextQuickResponse.getTime() - now.getTime());
+    nextQuickResponseLocal = formatClock(nextQuickResponse, deviceTimezone, props.content.locale);
+  }
 
   return (
     <section className="rounded-[28px] border border-slate-200/80 bg-slate-50/70 p-5 sm:p-7 dark:border-white/10 dark:bg-slate-900/50">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">{props.title}</p>
-          <h2 className="mt-2 font-serif text-3xl font-semibold">{availabilityStatus}</h2>
+          <h2 className="mt-2 font-serif text-3xl font-semibold">{props.checkingAvailability}</h2>
+          
+      {availabilityWindow && (
+        <p className="mt-4 rounded-2xl bg-accent/8 px-4 py-3 text-xs leading-6 text-slate-600 dark:text-slate-300">
+          {props.scheduleNote
+            .split('{start}').join(formatWindowClock(availabilityWindow.start, props.content.locale))
+            .split('{end}').join(formatWindowClock(availabilityWindow.end, props.content.locale))
+            .split('{briefEnd}').join(formatWindowClock(props.content.briefEnd, props.content.locale))}
+        </p>
+      )}
+
+      {now && availabilityWindow && (
+            <div className="mt-3 rounded-xl bg-emerald-50 px-3 py-2 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
+              <p className="text-[11px] font-semibold uppercase tracking-wide">
+                {isOnline ? props.availableInLabel : props.countdownLabel}
+              </p>
+              <p className="mt-1 font-mono text-sm font-bold">
+                {isOnline
+                  ? `${props.availableNow} · ${localAvailabilityStart}–${localAvailabilityEnd}`
+                  : `${countdown} · ${formatWindowClock(availabilityWindow.start, props.content.locale)} Asia/Dhaka · ${nextQuickResponseLocal}`}
+              </p>
+            </div>
+          )}
         </div>
         <span className={`inline-flex items-center gap-2 rounded-full px-3 py-2 text-xs font-semibold ${statusClasses}`}>
           <span className={`h-2 w-2 rounded-full ${statusDotClasses}`} />
           {availabilityStatus}
         </span>
       </div>
-
-      <p className="mt-5 text-sm leading-7 text-slate-600 dark:text-slate-300">{props.intro}</p>
 
       <div className="mt-6 grid gap-3 sm:grid-cols-2">
         <div className="rounded-[20px] border border-slate-200/80 bg-white/70 p-4 dark:border-white/10 dark:bg-slate-950/40">
@@ -242,8 +296,6 @@ export default function Schedule(props: ScheduleProps) {
           </div>
         </div>
       )}
-
-      <p className="mt-4 rounded-2xl bg-accent/8 px-4 py-3 text-xs leading-6 text-slate-600 dark:text-slate-300">{props.emailAlways}</p>
     </section>
   );
 }
