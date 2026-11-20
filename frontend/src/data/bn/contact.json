@@ -30,6 +30,8 @@
   "scheduleNote": "দ্রুত response: {start}–{end} · অল্প delay: {end}–{briefEnd} · {briefEnd} এর পর delayable response · Asia/Dhaka",
   "countdownLabel": "পরবর্তী quick response",
   "availableInLabel": "এখন quick response উপলব্ধ",
+  "shortDelayInLabel": "Short delay শুরু",
+  "delayedInLabel": "Delayed শুরু",
   "upcomingTitle": "দৈনিক availability",
   "dhakaColumn": "ঢাকা সময়",
   "localColumn": "আপনার সময়",

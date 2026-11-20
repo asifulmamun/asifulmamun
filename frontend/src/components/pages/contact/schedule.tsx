@@ -31,6 +31,8 @@ type ScheduleProps = {
   scheduleNote: string;
   countdownLabel: string;
   availableInLabel: string;
+  shortDelayInLabel: string;
+  delayedInLabel: string;
   upcomingTitle: string;
   dhakaColumn: string;
   localColumn: string;
@@ -206,18 +208,25 @@ export default function Schedule(props: ScheduleProps) {
       : 'bg-red-500';
   let localAvailabilityStart = '--';
   let localAvailabilityEnd = '--';
+  let localBriefEnd = '--';
   if (now && deviceTimezone && availabilityWindow) {
     const today = dateParts(now, props.content.timezone);
     const [startHour, startMinute] = availabilityWindow.start.split(':').map(Number);
     const [endHour, endMinute] = availabilityWindow.end.split(':').map(Number);
     localAvailabilityStart = formatClock(zonedDateTimeToInstant(today, startHour, startMinute, props.content.timezone), deviceTimezone, props.content.locale);
     localAvailabilityEnd = formatClock(zonedDateTimeToInstant(today, endHour, endMinute, props.content.timezone), deviceTimezone, props.content.locale);
+    localBriefEnd = formatClock(zonedDateTimeToInstant(today, briefEndHour, briefEndMinute, props.content.timezone), deviceTimezone, props.content.locale);
   }
   let countdown = '';
   let nextQuickResponseLocal = '';
+  let phaseCountdown = '';
+  let phaseCountdownLabel = '';
+  let phaseCountdownTime = '';
   if (now && deviceTimezone && availabilityWindow && currentDhakaTime) {
     const [startHour, startMinute] = availabilityWindow.start.split(':').map(Number);
+    const [endHour, endMinute] = availabilityWindow.end.split(':').map(Number);
     const startMinuteOfDay = startHour * 60 + startMinute;
+    const todayParts = { ...currentDhakaTime };
     let nextParts: DateParts = { ...currentDhakaTime };
     if (currentMinute !== null && currentMinute >= startMinuteOfDay) {
       const tomorrow = new Date(Date.UTC(nextParts.year, nextParts.month - 1, nextParts.day + 1));
@@ -232,6 +241,21 @@ export default function Schedule(props: ScheduleProps) {
     const nextQuickResponse = zonedDateTimeToInstant(nextParts, startHour, startMinute, props.content.timezone);
     countdown = formatCountdown(nextQuickResponse.getTime() - now.getTime());
     nextQuickResponseLocal = formatClock(nextQuickResponse, deviceTimezone, props.content.locale);
+    if (isOnline) {
+      const shortDelayStarts = zonedDateTimeToInstant(todayParts, endHour, endMinute, props.content.timezone);
+      phaseCountdown = formatCountdown(shortDelayStarts.getTime() - now.getTime());
+      phaseCountdownLabel = props.shortDelayInLabel;
+      phaseCountdownTime = localAvailabilityEnd;
+    } else if (isBriefDelay) {
+      const delayedStarts = zonedDateTimeToInstant(todayParts, briefEndHour, briefEndMinute, props.content.timezone);
+      phaseCountdown = formatCountdown(delayedStarts.getTime() - now.getTime());
+      phaseCountdownLabel = props.delayedInLabel;
+      phaseCountdownTime = localBriefEnd;
+    } else {
+      phaseCountdown = countdown;
+      phaseCountdownLabel = props.countdownLabel;
+      phaseCountdownTime = nextQuickResponseLocal;
+    }
   }
 
   return (
@@ -270,10 +294,23 @@ export default function Schedule(props: ScheduleProps) {
               >
                 <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${isOnline ? 'animate-pulse bg-emerald-500' : isBriefDelay ? 'animate-pulse bg-orange-500' : 'bg-red-500'}`} />
                 <span className="font-semibold">
-                  {isOnline ? props.availableInLabel : `${props.countdownLabel} · ${countdown}`}
+                  {phaseCountdownLabel}
                 </span>
                 <span className="text-slate-400">·</span>
-                <span className="font-mono font-bold">{isOnline ? `${localAvailabilityStart}–${localAvailabilityEnd}` : nextQuickResponseLocal}</span>
+                <span className="font-mono font-bold">{phaseCountdown} · {phaseCountdownTime}</span>
+              </div>
+            )}
+            {now && availabilityWindow && (
+              <div className="mt-2 flex w-full flex-wrap gap-1.5">
+                <span className={`inline-flex rounded-full border px-2 py-1 text-[10px] font-medium ${isOnline ? 'border-emerald-300 bg-emerald-50 text-emerald-700 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-300' : 'border-slate-200 text-slate-500 dark:border-white/10 dark:text-slate-400'} ${isOnline ? 'animate-pulse [animation-duration:2.4s]' : ''}`}>
+                  Quick · {localAvailabilityStart}–{localAvailabilityEnd}
+                </span>
+                <span className={`inline-flex rounded-full border px-2 py-1 text-[10px] font-medium ${isBriefDelay ? 'border-orange-300 bg-orange-50 text-orange-700 dark:border-orange-500/30 dark:bg-orange-500/10 dark:text-orange-300' : 'border-slate-200 text-slate-500 dark:border-white/10 dark:text-slate-400'} ${isBriefDelay ? 'animate-pulse [animation-duration:2.4s]' : ''}`}>
+                  Short delay · {localAvailabilityEnd}–{localBriefEnd}
+                </span>
+                <span className={`inline-flex rounded-full border px-2 py-1 text-[10px] font-medium ${!isOnline && !isBriefDelay ? 'border-red-300 bg-red-50 text-red-700 dark:border-red-500/30 dark:bg-red-500/10 dark:text-red-300' : 'border-slate-200 text-slate-500 dark:border-white/10 dark:text-slate-400'}`}>
+                  Delayed · after {localBriefEnd}
+                </span>
               </div>
             )}
           </div>
@@ -292,29 +329,6 @@ export default function Schedule(props: ScheduleProps) {
               <p className="truncate text-[11px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">{props.localColumn} · {deviceTimezone}</p>
               <p className="mt-1 text-sm font-semibold">{localAvailabilityStart} – {localAvailabilityEnd}</p>
             </div>
-          </div>
-          <div className="mt-3 flex flex-wrap gap-2">
-            {props.scheduleNote
-              .split('{start}').join(formatWindowClock(availabilityWindow.start, props.content.locale))
-              .split('{end}').join(formatWindowClock(availabilityWindow.end, props.content.locale))
-              .split('{briefEnd}').join(formatWindowClock(briefEnd, props.content.locale))
-              .split(' · ')
-              .map((segment, index) => {
-                const isActive = index === 0 ? isOnline : index === 1 ? isBriefDelay : !isOnline && !isBriefDelay;
-                const chipClasses = index === 0
-                  ? 'border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300'
-                  : index === 1
-                    ? 'border-orange-200 bg-orange-50 text-orange-700 dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-300'
-                    : 'border-red-200 bg-red-50 text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300';
-                return (
-                  <span
-                    key={segment}
-                    className={`inline-flex rounded-full border px-3 py-1.5 text-xs font-medium ${chipClasses} ${isActive ? 'animate-pulse shadow-sm [animation-duration:2.4s]' : 'opacity-75'}`}
-                  >
-                    {segment}
-                  </span>
-                );
-              })}
           </div>
         </div>
       )}

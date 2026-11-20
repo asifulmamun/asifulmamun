@@ -39,6 +39,8 @@ export default function ContactPage({ content }: { content: ContactContent }) {
             scheduleNote={content.scheduleNote}
             countdownLabel={content.countdownLabel}
             availableInLabel={content.availableInLabel}
+            shortDelayInLabel={content.shortDelayInLabel}
+            delayedInLabel={content.delayedInLabel}
             upcomingTitle={content.upcomingTitle}
             dhakaColumn={content.dhakaColumn}
             localColumn={content.localColumn}
