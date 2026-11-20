@@ -40,9 +40,8 @@
     "timezoneLabel": "Asia/Dhaka · UTC+06:00",
     "locale": "en-US",
     "windows": [
-      { "days": [1, 2, 3, 4, 5], "start": "10:00", "end": "12:00", "kind": "weekdays", "channel": "whatsapp" },
-      { "days": [0, 6], "start": "11:00", "end": "13:00", "kind": "weekend", "channel": "whatsapp" },
-      { "days": [0, 6], "start": "16:00", "end": "21:00", "kind": "weekend", "channel": "whatsapp" }
+      { "days": [1, 2, 3, 4, 5], "start": "10:00", "end": "21:30", "kind": "weekdays", "channel": "whatsapp" },
+      { "days": [0, 6], "start": "10:00", "end": "21:30", "kind": "weekend", "channel": "whatsapp" }
     ]
   }
 }
