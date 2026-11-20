@@ -256,11 +256,11 @@ export default function Schedule(props: ScheduleProps) {
         <div className="rounded-[20px] border border-slate-200/80 bg-white/70 p-4 dark:border-white/10 dark:bg-slate-950/40">
           <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400"><Globe2 className="h-4 w-4 text-accent" /> {props.deviceTimezoneTitle}</div>
           <p className="mt-3 font-serif text-2xl font-semibold">{deviceTime}</p>
-          <p className="mt-1 truncate text-xs text-slate-500 dark:text-slate-400 gap-1.5 flex items-center">
-            {deviceTimezone}
+          <div className="mt-1 flex min-w-0 flex-wrap items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400">
+            <span className="truncate">{deviceTimezone}</span>
             {now && availabilityWindow && (
               <div
-                className={`mt-3 inline-flex max-w-full flex-wrap items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] ${isOnline
+                className={`inline-flex max-w-full flex-wrap items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] ${isOnline
                     ? 'border-emerald-200/80 bg-emerald-50 text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300'
                     : isBriefDelay
                       ? 'border-orange-200/80 bg-orange-50 text-orange-700 dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-300'
@@ -276,7 +276,7 @@ export default function Schedule(props: ScheduleProps) {
                 <span className="font-mono font-bold">{isOnline ? `${localAvailabilityStart}–${localAvailabilityEnd}` : nextQuickResponseLocal}</span>
               </div>
             )}
-          </p>
+          </div>
         </div>
       </div>
 
