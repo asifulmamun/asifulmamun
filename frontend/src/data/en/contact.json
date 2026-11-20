@@ -42,7 +42,7 @@
     "locale": "en-US",
     "briefEnd": "23:59",
     "windows": [
-      { "days": [0, 1, 2, 3, 4, 5, 6], "start": "10:00", "end": "22:00", "kind": "daily", "channel": "whatsapp" }
+      { "days": [0, 1, 2, 3, 4, 5, 6], "start": "10:00", "end": "21:30", "kind": "daily", "channel": "whatsapp" }
     ]
   }
 }

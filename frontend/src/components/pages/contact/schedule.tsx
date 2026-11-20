@@ -179,7 +179,8 @@ export default function Schedule(props: ScheduleProps) {
   const currentMinute = currentDhakaTime
     ? currentDhakaTime.hour * 60 + currentDhakaTime.minute
     : null;
-  const [briefEndHour, briefEndMinute] = props.content.briefEnd.split(':').map(Number);
+  const briefEnd = props.content.briefEnd || '23:59';
+  const [briefEndHour, briefEndMinute] = briefEnd.split(':').map(Number);
   const briefEndMinuteOfDay = briefEndHour * 60 + briefEndMinute;
   const [availabilityEndHour, availabilityEndMinute] = availabilityWindow?.end.split(':').map(Number) ?? [0, 0];
   const availabilityEndMinuteOfDay = availabilityEndHour * 60 + availabilityEndMinute;
@@ -238,29 +239,7 @@ export default function Schedule(props: ScheduleProps) {
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent">{props.title}</p>
-          <h2 className="mt-2 font-serif text-3xl font-semibold">{props.checkingAvailability}</h2>
-          
-      {availabilityWindow && (
-        <p className="mt-4 rounded-2xl bg-accent/8 px-4 py-3 text-xs leading-6 text-slate-600 dark:text-slate-300">
-          {props.scheduleNote
-            .split('{start}').join(formatWindowClock(availabilityWindow.start, props.content.locale))
-            .split('{end}').join(formatWindowClock(availabilityWindow.end, props.content.locale))
-            .split('{briefEnd}').join(formatWindowClock(props.content.briefEnd, props.content.locale))}
-        </p>
-      )}
-
-      {now && availabilityWindow && (
-            <div className="mt-3 rounded-xl bg-emerald-50 px-3 py-2 text-emerald-700 dark:bg-emerald-500/10 dark:text-emerald-300">
-              <p className="text-[11px] font-semibold uppercase tracking-wide">
-                {isOnline ? props.availableInLabel : props.countdownLabel}
-              </p>
-              <p className="mt-1 font-mono text-sm font-bold">
-                {isOnline
-                  ? `${props.availableNow} · ${localAvailabilityStart}–${localAvailabilityEnd}`
-                  : `${countdown} · ${formatWindowClock(availabilityWindow.start, props.content.locale)} Asia/Dhaka · ${nextQuickResponseLocal}`}
-              </p>
-            </div>
-          )}
+          <h2 className="mt-2 font-serif text-3xl font-semibold">{availabilityStatus}</h2>
         </div>
         <span className={`inline-flex items-center gap-2 rounded-full px-3 py-2 text-xs font-semibold ${statusClasses}`}>
           <span className={`h-2 w-2 rounded-full ${statusDotClasses}`} />
@@ -277,7 +256,27 @@ export default function Schedule(props: ScheduleProps) {
         <div className="rounded-[20px] border border-slate-200/80 bg-white/70 p-4 dark:border-white/10 dark:bg-slate-950/40">
           <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400"><Globe2 className="h-4 w-4 text-accent" /> {props.deviceTimezoneTitle}</div>
           <p className="mt-3 font-serif text-2xl font-semibold">{deviceTime}</p>
-          <p className="mt-1 truncate text-xs text-slate-500 dark:text-slate-400">{deviceTimezone}</p>
+          <p className="mt-1 truncate text-xs text-slate-500 dark:text-slate-400 gap-1.5 flex items-center">
+            {deviceTimezone}
+            {now && availabilityWindow && (
+              <div
+                className={`mt-3 inline-flex max-w-full flex-wrap items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] ${isOnline
+                    ? 'border-emerald-200/80 bg-emerald-50 text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300'
+                    : isBriefDelay
+                      ? 'border-orange-200/80 bg-orange-50 text-orange-700 dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-300'
+                      : 'border-red-200/80 bg-red-50 text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300'
+                  }`}
+                aria-live="polite"
+              >
+                <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${isOnline ? 'animate-pulse bg-emerald-500' : isBriefDelay ? 'animate-pulse bg-orange-500' : 'bg-red-500'}`} />
+                <span className="font-semibold">
+                  {isOnline ? props.availableInLabel : `${props.countdownLabel} · ${countdown}`}
+                </span>
+                <span className="text-slate-400">·</span>
+                <span className="font-mono font-bold">{isOnline ? `${localAvailabilityStart}–${localAvailabilityEnd}` : nextQuickResponseLocal}</span>
+              </div>
+            )}
+          </p>
         </div>
       </div>
 
@@ -293,6 +292,29 @@ export default function Schedule(props: ScheduleProps) {
               <p className="truncate text-[11px] font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">{props.localColumn} · {deviceTimezone}</p>
               <p className="mt-1 text-sm font-semibold">{localAvailabilityStart} – {localAvailabilityEnd}</p>
             </div>
+          </div>
+          <div className="mt-3 flex flex-wrap gap-2">
+            {props.scheduleNote
+              .split('{start}').join(formatWindowClock(availabilityWindow.start, props.content.locale))
+              .split('{end}').join(formatWindowClock(availabilityWindow.end, props.content.locale))
+              .split('{briefEnd}').join(formatWindowClock(briefEnd, props.content.locale))
+              .split(' · ')
+              .map((segment, index) => {
+                const isActive = index === 0 ? isOnline : index === 1 ? isBriefDelay : !isOnline && !isBriefDelay;
+                const chipClasses = index === 0
+                  ? 'border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300'
+                  : index === 1
+                    ? 'border-orange-200 bg-orange-50 text-orange-700 dark:border-orange-500/20 dark:bg-orange-500/10 dark:text-orange-300'
+                    : 'border-red-200 bg-red-50 text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300';
+                return (
+                  <span
+                    key={segment}
+                    className={`inline-flex rounded-full border px-3 py-1.5 text-xs font-medium ${chipClasses} ${isActive ? 'animate-pulse shadow-sm [animation-duration:2.4s]' : 'opacity-75'}`}
+                  >
+                    {segment}
+                  </span>
+                );
+              })}
           </div>
         </div>
       )}
