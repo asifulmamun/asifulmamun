@@ -24,12 +24,12 @@
   "scheduleTimezoneTitle": "Bangladesh time",
   "deviceTimezoneTitle": "Your local time",
   "availableNow": "Available now",
-  "outsideHours": "Delayed reponse",
+  "outsideHours": "Delayed response",
+  "briefDelay": "Brief delay",
   "checkingAvailability": "Checking availability",
-  "whatsappWindow": "WhatsApp is available during the scheduled time else it may take some time to respond.",
-  "emailAlways": "Email is always open for business inquiries and cost optimization consultations",
+  "emailAlways": "Quick response: 10:00 AM–10:00 PM · Short delay: 10:00 PM–11:59 PM · Delayed after 11:59 PM. Asia/Dhaka.",
   "scheduleIntro": "You can contact me anytime. For a quicker WhatsApp response or a free consultation, compare my Dhaka availability with the same hours in your local timezone.",
-  "upcomingTitle": "Upcoming availability · next 7 days",
+  "upcomingTitle": "Daily availability",
   "dhakaColumn": "Dhaka time",
   "localColumn": "Your time",
   "weekdaysLabel": "Weekdays",
@@ -40,8 +40,7 @@
     "timezoneLabel": "Asia/Dhaka · UTC+06:00",
     "locale": "en-US",
     "windows": [
-      { "days": [1, 2, 3, 4, 5], "start": "10:00", "end": "21:30", "kind": "weekdays", "channel": "whatsapp" },
-      { "days": [0, 6], "start": "10:00", "end": "21:30", "kind": "weekend", "channel": "whatsapp" }
+      { "days": [0, 1, 2, 3, 4, 5, 6], "start": "10:00", "end": "22:00", "kind": "daily", "channel": "whatsapp" }
     ]
   }
 }

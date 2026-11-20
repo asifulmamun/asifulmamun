@@ -34,8 +34,8 @@ export default function ContactPage({ content }: { content: ContactContent }) {
             deviceTimezoneTitle={content.deviceTimezoneTitle}
             availableNow={content.availableNow}
             outsideHours={content.outsideHours}
+            briefDelay={content.briefDelay}
             checkingAvailability={content.checkingAvailability}
-            whatsappWindow={content.whatsappWindow}
             emailAlways={content.emailAlways}
             intro={content.scheduleIntro}
             upcomingTitle={content.upcomingTitle}
